@@ -1,0 +1,101 @@
+.description {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    &__text {
+        &--title {
+            font-family: "Libre Caslon Display", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 36px;
+            color: #fff;
+            margin: 0;
+            margin-top: 84px;
+            margin-bottom: 47px;
+        }
+
+        &--p {
+            font-family: "Manrope", sans-serif;
+            margin: 0;
+            font-size: 17px;
+            color: #fff;
+            margin-bottom: 63px;
+        }
+    }
+
+    &__video {
+        width: 80vw;
+        display: flex;
+        margin: 0 auto;
+        margin-bottom: 84px;
+    }
+}
+
+@media (min-width:750px) {
+    .description {
+        padding-left: 40px;
+        padding-right: 40px;
+
+        &__text {
+            &--title {
+                font-family: "Libre Caslon Display", serif;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 47px;
+                color: #fff;
+                margin: 0;
+                margin-top: 84px;
+                margin-bottom: 47px;
+            }
+
+            &--p {
+                font-family: "Manrope", sans-serif;
+                margin: 0;
+                font-size: 20px;
+                color: #fff;
+                margin-bottom: 63px;
+                max-width: 70vw;
+            }
+        }
+
+        &__video {
+            width: 80vw;
+            display: flex;
+            margin: 0 auto;
+            margin-bottom: 84px;
+        }
+    }
+}
+
+@media (min-width:1200px) {
+    .description {
+        padding-left: 69px;
+        padding-right: 69px;
+        display: flex;
+        margin-top: 93px;
+        margin-bottom: 93px;
+
+        &__text {
+            &--title {
+                font-size: 52px;
+                margin: 0;
+                margin-bottom: 39px;
+            }
+
+            &--p {
+                font-size: 22px;
+                max-width: 40vw;
+                margin: 0;
+            }
+        }
+
+        &__video {
+            width: 45vw;
+            margin: 0;
+            margin-left: 69px;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+        }
+    }
+}
