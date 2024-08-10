@@ -274,6 +274,62 @@ main {
   padding: 0;
 }
 
+.footer {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.footer__title {
+  font-family: "Libre Caslon Display", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 36px;
+  color: #fff;
+  margin: 0;
+  margin-top: 84px;
+  margin-bottom: 47px;
+}
+.footer__content {
+  display: flex;
+}
+.footer__list {
+  margin: 0;
+  padding: 0;
+}
+.footer__list :nth-child(2) {
+  margin-right: 27px;
+}
+.footer__el {
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+  font-size: 15px;
+  color: #fff;
+  list-style: none;
+  margin-bottom: 7px;
+}
+.footer__el a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer__el--reseau {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.footer__el--reseauEl {
+  list-style: none;
+  margin-right: 20px;
+}
+.footer__small {
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+  font-size: 11px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  margin-top: 22px;
+  margin-bottom: 22px;
+}
+
 .tomes {
   overflow: hidden;
   white-space: nowrap;

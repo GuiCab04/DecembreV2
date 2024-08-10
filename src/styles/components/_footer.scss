@@ -1,11 +1,208 @@
 .footer {
-    &__title {}
+    padding-left: 20px;
+    padding-right: 20px;
 
-    &__list {}
+    &__title {
+        font-family: "Libre Caslon Display", serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 36px;
+        color: #fff;
+        margin: 0;
+        margin-top: 84px;
+        margin-bottom: 47px;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &__list {
+        margin: 0;
+        padding: 0;
+
+
+    }
 
     &__el {
-        &--reseau {}
+        font-family: "Manrope", sans-serif;
+        margin: 0;
+        font-size: 13px;
+        color: #fff;
+        list-style: none;
+        margin-bottom: 7px;
 
-        &__reseauEl {}
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        &--reseau {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &--reseauEl {
+            list-style: none;
+            margin: 0;
+        }
+    }
+
+    &__small {
+        font-family: "Manrope", sans-serif;
+        margin: 0;
+        font-size: 11px;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        margin-top: 27px;
+        margin-bottom: 20px;
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+}
+
+@media (min-width:750px) {
+    .footer {
+        padding-left: 40px;
+        padding-right: 40px;
+
+        &__title {
+            font-family: "Libre Caslon Display", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 47px;
+            color: #fff;
+            margin: 0;
+            margin-top: 84px;
+            margin-bottom: 47px;
+        }
+
+        &__content {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        &__list {
+            margin: 0;
+            padding: 0;
+
+
+        }
+
+        &__el {
+            font-family: "Manrope", sans-serif;
+            margin: 0;
+            font-size: 17px;
+            color: #fff;
+            list-style: none;
+            margin-bottom: 10px;
+
+            a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+            &--reseau {
+                display: flex;
+                margin: 0;
+                padding: 0;
+                justify-content: space-between;
+            }
+
+            &--reseauEl {
+                list-style: none;
+                margin: 0;
+            }
+        }
+
+        &__small {
+            font-family: "Manrope", sans-serif;
+            margin: 0;
+            font-size: 14px;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            margin-top: 36px;
+            margin-bottom: 27px;
+        }
+    }
+}
+
+@media (min-width:1200px) {
+    .footer {
+        padding-left: 69px;
+        padding-right: 69px;
+
+        &__title {
+            font-family: "Libre Caslon Display", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 52px;
+            color: #fff;
+            margin: 0;
+            margin-top: 84px;
+            margin-bottom: 69px;
+        }
+
+        &__content {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__list {
+            margin: 0;
+            padding: 0;
+        }
+
+        &__el {
+            font-family: "Manrope", sans-serif;
+            margin: 0;
+            font-size: 22px;
+            color: #fff;
+            list-style: none;
+            margin-bottom: 10px;
+
+            a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+            &--reseau {
+                display: flex;
+                margin: 0;
+                padding: 0;
+                margin-right: 29px;
+
+            }
+
+            &--reseauEl {
+                list-style: none;
+                margin: 0;
+
+                img {
+                    width: 29px;
+                }
+
+            }
+        }
+
+        &__small {
+            font-family: "Manrope", sans-serif;
+            margin: 0;
+            font-size: 17px;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            margin-top: 39px;
+            margin-bottom: 29px;
+        }
     }
 }
