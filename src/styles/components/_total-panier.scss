@@ -1,0 +1,297 @@
+.panierTotal {
+    background: linear-gradient(rgba(0, 6, 22, 1) 0%, rgba(23, 19, 51, 1) 33%, rgba(23, 19, 51, 1) 66%, rgba(0, 6, 22, 1) 100%);
+    padding: 84px 20px;
+    padding-bottom: 0;
+    margin-top: 84px;
+
+    &__title {
+        font-family: "Libre Caslon Display", serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 36px;
+        color: #fff;
+        margin: 0;
+        margin-bottom: 47px;
+    }
+
+    &__content {}
+
+    &__paraNoItem {
+        font-family: "Manrope", sans-serif;
+        margin: 0;
+        font-size: 17px;
+        color: #fff;
+        margin-bottom: 17px;
+    }
+
+    &__subtitle {
+        font-family: "Libre Caslon Display", serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 27px;
+        color: #fff;
+        margin: 0;
+        margin-top: 84px;
+        margin-bottom: 47px;
+    }
+
+    &__list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+
+
+
+        &--book {
+            display: none;
+        }
+
+        &--ebook {
+            display: none;
+        }
+    }
+
+    &__el {
+        font-family: "Manrope", sans-serif;
+        margin: 0;
+        font-size: 17px;
+        color: #fff;
+        margin-bottom: 17px;
+
+        &--big {
+            font-size: 27px;
+            margin-top: 27px;
+        }
+
+    }
+
+    &__img {
+        margin-top: 63px;
+        width: 100%;
+        padding: 0;
+    }
+
+    &__listButton {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    &__link {
+        font-family: "Manrope", sans-serif;
+        font-size: 20px;
+        border: #fff 1px solid;
+        padding: 11px 15px;
+        display: flex;
+        margin: 0 auto;
+        margin-top: 47px;
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+}
+
+@media (min-width:750px) {
+    .panierTotal {
+        background: linear-gradient(rgba(0, 6, 22, 1) 0%, rgba(23, 19, 51, 1) 33%, rgba(23, 19, 51, 1) 66%, rgba(0, 6, 22, 1) 100%);
+        padding: 93px 40px;
+        padding-bottom: 0;
+        margin-top: 0px;
+
+        &__title {
+            font-family: "Libre Caslon Display", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 47px;
+            color: #fff;
+            margin: 0;
+            margin-bottom: 47px;
+        }
+
+        &__content {}
+
+        &__paraNoItem {
+            font-family: "Manrope", sans-serif;
+            margin: 0;
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        &__subtitle {
+            font-family: "Libre Caslon Display", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 36px;
+            color: #fff;
+            margin: 0;
+            margin-top: 93px;
+            margin-bottom: 63px;
+        }
+
+        &__list {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+
+
+
+            &--book {
+                display: none;
+            }
+
+            &--ebook {
+                display: none;
+            }
+        }
+
+        &__el {
+            font-family: "Manrope", sans-serif;
+            margin: 0;
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 20px;
+
+            &--big {
+                font-size: 36px;
+                margin-top: 36px;
+            }
+
+        }
+
+        &__img {
+            width: 80%;
+            padding: 0;
+            display: flex;
+            margin: 0 auto;
+            margin-top: 84px;
+        }
+
+        &__listButton {
+            display: flex;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        &__link {
+            font-size: 27px;
+            border: #fff 2px solid;
+            padding: 15px 20px;
+
+            a {
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+@media (min-width:1200px) {
+    .panierTotal {
+        background: linear-gradient(rgba(0, 6, 22, 1) 0%, rgba(23, 19, 51, 1) 33%, rgba(23, 19, 51, 1) 66%, rgba(0, 6, 22, 1) 100%);
+        padding: 93px 69px;
+        padding-bottom: 0;
+        margin-top: 0px;
+
+        &__title {
+            font-family: "Libre Caslon Display", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 52px;
+            color: #fff;
+            margin: 0;
+            margin-bottom: 69px;
+        }
+
+        &__content {
+            max-width: 70%;
+            display: grid;
+            margin: 0 auto;
+        }
+
+        &__paraNoItem {
+            font-family: "Manrope", sans-serif;
+            margin: 0;
+            font-size: 22px;
+            color: #fff;
+            margin-bottom: 22px;
+        }
+
+        &__subtitle {
+            font-family: "Libre Caslon Display", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 52px;
+            color: #fff;
+            margin: 0;
+            margin-top: 69px;
+            margin-bottom: 69px;
+        }
+
+        &__list {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+
+
+
+            &--book {
+                display: none;
+            }
+
+            &--ebook {
+                display: none;
+            }
+        }
+
+        &__el {
+            font-family: "Manrope", sans-serif;
+            margin: 0;
+            font-size: 22px;
+            color: #fff;
+            margin-bottom: 22px;
+
+            &--big {
+                font-size: 39px;
+                margin-top: 39px;
+            }
+
+        }
+
+        &__img {
+            width: 50%;
+            padding: 0;
+            display: flex;
+            margin: 0 auto;
+            margin-top: 93px;
+        }
+
+        &__listButton {
+            display: flex;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        &__link {
+            font-size: 29px;
+            border: #fff 2px solid;
+            padding: 15px 20px;
+
+            a {
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+    }
+}

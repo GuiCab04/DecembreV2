@@ -1,0 +1,182 @@
+.panier {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    &__title {
+        font-family: "Libre Caslon Display", serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 47px;
+        color: #fff;
+        margin: 0;
+        margin-top: 47px;
+        margin-bottom: 47px;
+    }
+
+    &__contentBook {
+        margin-bottom: 84px;
+
+    }
+
+    &__quantity {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    &__contentEbook {
+        border-top: solid 2px #fff;
+    }
+
+    &__img {
+        width: 40vw;
+        display: flex;
+        margin: 0 auto;
+        margin-bottom: 47px;
+        margin-top: 84px;
+    }
+
+    &__list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    &__el {
+        font-family: "Manrope", sans-serif;
+        margin: 0;
+        font-size: 17px;
+        color: #fff;
+        margin-bottom: 7px;
+    }
+
+    &__count {
+        background: #000616;
+        color: #fff;
+        padding: 3px;
+        margin-left: 15px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (min-width:750px) {
+    .panier {
+        padding-left: 40px;
+        padding-right: 40px;
+
+        &__title {
+            font-family: "Libre Caslon Display", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 63px;
+            color: #fff;
+            margin: 0;
+            margin-top: 63px;
+            margin-bottom: 63px;
+        }
+
+        &__contentBook {
+            margin-bottom: 93px;
+        }
+
+        &__quantity {
+            display: flex;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        &__content {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        &__contentEbook {
+            border-top: solid 0px #fff;
+        }
+
+        &__img {
+            width: 25vw;
+            display: flex;
+            margin: 0 auto;
+            margin-bottom: 63px;
+            margin-top: 93px;
+        }
+
+        &__list {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        &__el {
+            font-family: "Manrope", sans-serif;
+            margin: 0;
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 7px;
+        }
+
+        &__count {
+            background: #000616;
+            color: #fff;
+            font-size: 15px;
+            padding: 5px;
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+@media (min-width:1200px) {
+    .panier {
+        padding-left: 69px;
+        padding-right: 69px;
+
+        &__title {
+            font-size: 52px;
+            margin: 0;
+            margin-bottom: 69px;
+            margin-top: 93px;
+        }
+
+        &__contentBook {
+            margin-bottom: 93px;
+        }
+
+        &__img {
+            width: 15vw;
+            display: flex;
+            margin: 0 auto;
+            margin-bottom: 69px;
+            margin-top: 0px;
+        }
+
+        &__list {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        &__el {
+            font-family: "Manrope", sans-serif;
+            margin: 0;
+            font-size: 22px;
+            color: #fff;
+            margin-bottom: 9px;
+        }
+
+        &__count {
+            background: #000616;
+            color: #fff;
+            font-size: 17px;
+            padding: 7px;
+            margin-left: 22px;
+            display: flex;
+            align-items: center;
+        }
+    }
+}

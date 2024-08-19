@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Cabaraux Guillaume">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:site_name" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Solo Leveling | Panier">
+    <meta property="og:url" content="https://guillaume-cabaraux.be/projets/decembre">
+    <meta property="og:image" content="assets/images/logo.png">
+    <meta property="og:description" content="Solo Leveling | Panier">
+    <link rel="shortcut icon" href="assets/images/logo.png">
+    <link rel="stylesheet" href="styles/app.css">
+    <script src="scripts/app.js" defer></script>
+    <title>Solo Leveling | Panier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Manrope:wght@200..800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+
+        <div class="nav--mobile">
+            <a href="index.html"><img class="nav__logo" src="assets/images/logo.png"
+                    alt="Logo avec comme écriture 'Solo Leveling'"></a>
+            <button type="button" class="menu__nav--toggle" id="menuToggle">
+                <span class="menu__bar"></span>
+                <span class="menu__bar"></span>
+                <span class="menu__bar"></span>
+            </button>
+            <nav class="menu">
+                <ul class="menu__list" id="menuList">
+                    <li class="menu__el"><a href="#">Accueil</a></li>
+                    <li class="menu__el"><a href="#">Mon panier<img src="assets/images/panier.svg"
+                                alt="Icone qui représente un panier"></a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <nav class="nav--desktop">
+            <a href="index.html"><img class="nav__logo" src="assets/images/logo.png"
+                    alt="Logo avec comme écriture 'Solo Leveling'"></a>
+            <ul class="nav__list">
+                <li class="nav__el nav__el--button"><a href="annexe.html">Accueil</a></li>
+                <li class="nav__el nav__el--button"><a href="annexe.html">Mon panier<img src="assets/images/panier.svg"
+                            alt="Icone qui représente un panier"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="panier">
+            <h1 class="panier__title">Panier</h1>
+            <div class="panier__content">
+                <div class="panier__contentBook">
+                    <img class="panier__img" src="assets/images/manga.png" alt="Couverture du Tome 1 de Solo Leveling">
+                    <ul class="panier__list">
+                        <li class="panier__el">Solo Leveling - KBooks <br>
+                            Coffret complet (14 livres)</li>
+                        <li class="panier__el">Prix : 169,99€</li>
+                        <li class="panier__el">
+                            <ul class="panier__quantity">
+                                <li class="panier__el">Quantité :</li>
+                                <li id="counter_book">
+                                    <select class="panier__count" name="quantity_book" id="quantity_book">
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="panier__el">Sous-total : <span id="value__book">0.00€</span></li>
+                    </ul>
+                </div>
+                <div class="panier__contentEbook">
+                    <img class="panier__img" src="assets/images/manga.png" alt="">
+                    <ul class="panier__list">
+                        <li class="panier__el">Solo Leveling - KBooks<br>
+                            Kindle (14 fichiers livres)</li>
+                        <li class="panier__el">Prix : 9,99€</li>
+                        <li class="panier__el">
+                            <ul class="panier__quantity">
+                                <li class="panier__el">Quantité :</li>
+                                <li id="counter_ebook">
+                                    <select class="panier__count" name="quantity_ebook" id="quantity_ebook">
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="panier__el">Sous-total : <span id="value__ebook">0.00€</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="panierTotal">
+            <h2 class="panierTotal__title">Total panier</h2>
+            <div class="panierTotal__content">
+                <h3 class="panierTotal__subtitle">Produit</h3>
+
+                <p class="panierTotal__paraNoItem" id="no-items-message">Aucun article n'est sélectionné.</p>
+
+                <ul class="panierTotal__list panierTotal__list--book">
+                    <li class="panierTotal__el">Solo Leveling - KBooks <br>
+                        Coffret complet (14 livres)</li>
+                    <li class="panierTotal__el" id="value__book">0.00€</li>
+                </ul>
+                <ul class="panierTotal__list panierTotal__list--ebook">
+                    <li class="panierTotal__el">Solo Leveling - KBooks<br>
+                        Kindle (14 fichiers livres)</li>
+                    <li class="panierTotal__el" id="value__ebook">0.00€</li>
+                </ul>
+
+                <ul class="panierTotal__list">
+                    <li class="panierTotal__el panierTotal__el--big">Total :</li>
+                    <li class="panierTotal__el panierTotal__el--big" id="value__total">0.00€</li>
+                </ul>
+            </div>
+            <ul class="panierTotal__listButton">
+                <li class="panierTotal__link"><a id="order-button" class="disabled" href="livraison.html">Commander</a>
+                </li>
+            </ul>
+            <img class="panierTotal__img" src="assets/images/panier-solo-L.png"
+                alt="Illustration du personnage principale de Solo Leveling">
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <h2 class="footer__title">Infos pratiques</h2>
+        <div class="footer__content">
+            <ul class="footer__list">
+                <li class="footer__el">
+                    <ul class="footer__el--reseau">
+                        <li class="footer__el--reseauEl"><a href="https://www.instagram.com/guicab_dwt/"><img
+                                    src="assets/images/instagram.svg" alt="Logo d'Instagram"></a>
+                        </li>
+                        <li class="footer__el--reseauEl"><a href="mailto:guillaume.cabaraux@student.heaj.be"><img
+                                    src="assets/images/mail.svg" alt="Logo de mail"></a></li>
+                        <li class="footer__el--reseauEl"><a href="https://github.com/GuiCab04"><img
+                                    src="assets/images/github.svg" alt="Logo de Github"></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="footer__el">Mode de paiement</li>
+                <li class="footer__el">Livraison</li>
+            </ul>
+            <ul class="footer__list">
+                <li class="footer__el">Condition d'utilisation</li>
+                <li class="footer__el">Politique de confidentialité</li>
+                <li class="footer__el">Politique de remboursement</li>
+                <li class="footer__el"><a href="https://guillaume-cabaraux.be">Guillaume Cabaraux</a></li>
+            </ul>
+        </div>
+        <small class="footer__small">©2024 - <a href="#">Crédits</a></small>
+    </footer>
+
+</body>
+
+</html>

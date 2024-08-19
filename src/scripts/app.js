@@ -65,60 +65,137 @@ menuLinks.forEach(link => {
 
 //Tomes Overlay Infini
 
-const container = document.querySelector('.tomes__img');
-const images = Array.from(container.children);
-const overlay = document.getElementById('overlay');
-const overlayImg = document.getElementById('overlay-img');
-
-images.forEach(image => {
-    const clone = image.cloneNode(true);
-    container.appendChild(clone);
-});
-
-const totalWidth = images.reduce((acc, image) => acc + image.clientWidth, 0) + (images.length * 20);
-
-const animation = gsap.to(container, {
-    x: -totalWidth,
-    duration: 25,
-    repeat: -1,
-    ease: "linear",
-    modifiers: {
-        x: gsap.utils.unitize(x => parseFloat(x) % -totalWidth)
-    },
-    paused: false
-});
-
-function pauseAnimation() {
-    console.log('Pausing animation');
-    animation.pause();
-}
-
-function resumeAnimation() {
-    console.log('Resuming animation');
-    animation.resume();
-}
-
-container.addEventListener('mouseenter', () => {
-    pauseAnimation();
-});
-
-container.addEventListener('mouseleave', () => {
-    resumeAnimation();
-});
-
-container.addEventListener('click', (event) => {
-    if (event.target.tagName === 'IMG') {
-        overlayImg.src = event.target.src;
-        overlay.style.display = 'flex';
-        pauseAnimation();
+function initializeAnimation() {
+    const container = document.querySelector('.tomes__img');
+    if (!container) {
+        return;
     }
-});
 
-overlay.addEventListener('click', () => {
-    overlay.style.display = 'none';
-    overlayImg.src = '';
-    resumeAnimation();
-});
+    const images = Array.from(container.children);
+    const overlay = document.getElementById('overlay');
+    const overlayImg = document.getElementById('overlay-img');
+    images.forEach(image => {
+        const clone = image.cloneNode(true);
+        container.appendChild(clone);
+    });
+
+    const totalWidth = images.reduce((acc, image) => acc + image.clientWidth, 0) + (images.length * 20);
+
+    const animation = gsap.to(container, {
+        x: -totalWidth,
+        duration: 25,
+        repeat: -1,
+        ease: "linear",
+        modifiers: {
+            x: gsap.utils.unitize(x => parseFloat(x) % -totalWidth)
+        },
+        paused: false
+    });
+
+    function pauseAnimation() {
+        console.log('Pausing animation');
+        animation.pause();
+    }
+
+    function resumeAnimation() {
+        console.log('Resuming animation');
+        animation.resume();
+    }
+
+    container.addEventListener('mouseenter', () => {
+        pauseAnimation();
+    });
+
+    container.addEventListener('mouseleave', () => {
+        resumeAnimation();
+    });
+
+    container.addEventListener('click', (event) => {
+        if (event.target.tagName === 'IMG') {
+            overlayImg.src = event.target.src;
+            overlay.style.display = 'flex';
+            pauseAnimation();
+        }
+    });
+
+    overlay.addEventListener('click', () => {
+        overlay.style.display = 'none';
+        overlayImg.src = '';
+        resumeAnimation();
+    });
+}
+
+initializeAnimation();
+
+
+
+//COUNT 
+
+const quantitySelectBook = document.getElementById("quantity_book");
+const quantitySelectEbook = document.getElementById("quantity_ebook");
+
+const panierBook = document.querySelector(".panier__contentBook #value__book");
+const panierEbook = document.querySelector(".panier__contentEbook #value__ebook");
+
+const totalBookList = document.querySelector(".panierTotal__list--book");
+const totalEbookList = document.querySelector(".panierTotal__list--ebook");
+
+const totalBook = document.querySelector(".panierTotal__list--book #value__book");
+const totalEbook = document.querySelector(".panierTotal__list--ebook #value__ebook");
+const valueTotal = document.getElementById("value__total");
+
+const noItemsMessage = document.getElementById("no-items-message");
+
+function updateTotals() {
+    const pricePerBook = 169.99;
+    const pricePerEbook = 9.99;
+
+    const quantityBook = Number(quantitySelectBook.value);
+    const quantityEbook = Number(quantitySelectEbook.value);
+
+    const subtotalBook = (pricePerBook * quantityBook).toFixed(2);
+    const subtotalEbook = (pricePerEbook * quantityEbook).toFixed(2);
+
+    // Mettre à jour les sous-totaux dans les deux sections (panier et total)
+    if (panierBook) panierBook.textContent = `${subtotalBook}€`;
+    if (totalBook) totalBook.textContent = `${subtotalBook}€`;
+
+    if (panierEbook) panierEbook.textContent = `${subtotalEbook}€`;
+    if (totalEbook) totalEbook.textContent = `${subtotalEbook}€`;
+
+    // Afficher ou masquer les sections en fonction des sous-totaux
+    if (subtotalBook > 0) {
+        totalBookList.style.display = "flex";
+    } else {
+        totalBookList.style.display = "none";
+    }
+
+    if (subtotalEbook > 0) {
+        totalEbookList.style.display = "flex";
+    } else {
+        totalEbookList.style.display = "none";
+    }
+
+    // Calculer et mettre à jour le total global
+    const total = (parseFloat(subtotalBook) + parseFloat(subtotalEbook)).toFixed(2);
+    if (valueTotal) valueTotal.textContent = `${total}€`;
+
+    // Afficher ou masquer le message "Aucun article n'est sélectionné"
+    if (subtotalBook == 0 && subtotalEbook == 0) {
+        noItemsMessage.style.display = "block";
+    } else {
+        noItemsMessage.style.display = "none";
+    }
+}
+
+if (quantitySelectBook) {
+    quantitySelectBook.addEventListener("input", updateTotals);
+}
+
+if (quantitySelectEbook) {
+    quantitySelectEbook.addEventListener("input", updateTotals);
+}
+
 
 
 

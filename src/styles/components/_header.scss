@@ -71,6 +71,12 @@ header {
         margin: auto 0;
         padding: 0;
         margin-bottom: 0;
+
+        :nth-child(5) {
+            border: solid 2px #fff;
+            padding: 11px 15px;
+            margin-top: 46.5px;
+        }
     }
 
     &__el {
@@ -276,6 +282,11 @@ html.menu--open {
             display: flex;
             padding: 0;
             margin: 0;
+
+            :nth-child(5) {
+                border: solid 2px #fff;
+                padding: 11px 15px;
+            }
         }
 
         &__el {
@@ -292,7 +303,7 @@ html.menu--open {
 
             & img {
                 padding-left: 7px;
-                width: 22px;
+                width: 20px;
             }
 
             a {
