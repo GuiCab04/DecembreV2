@@ -47,144 +47,241 @@
             <a href="index.html"><img class="nav__logo" src="assets/images/logo.png"
                     alt="Logo avec comme écriture 'Solo Leveling'"></a>
             <ul class="nav__list">
-                <li class="nav__el nav__el--button"><a href="annexe.html">Accueil</a></li>
-                <li class="nav__el nav__el--button"><a href="annexe.html">Mon panier<img src="assets/images/panier.svg"
+                <li class="nav__el nav__el--button"><a href="index.html">Accueil</a></li>
+                <li class="nav__el nav__el--button"><a href="panier.html">Mon panier<img src="assets/images/panier.svg"
                             alt="Icone qui représente un panier"></a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section>
-            <h1>Livraison</h1>
-            <form action="votre_page_de_traitement.php" method="POST">
-                <div class="parent">
-                    <div class="div1">
-                        <label for="prenom">Prénom :</label>
-                        <input type="text" id="prenom" name="prenom" title="Entrez votre prénom" placeholder="Prénom"
-                            required>
+        <section class="livraison">
+            <h1 class="livraison__title">Livraison</h1>
+            <form class="livraison__form" action="payement.html" method="get" onsubmit="handleSubmit(event)">
+                <div>
+                    <fieldset class="livraison__gridParent">
+                        <div class="livraison__gridEl--1">
+                            <label for="prenom" class="livraison__gridLabel">Prénom</label>
+                            <input type="text" class="livraison__gridInput" id="prenom" name="prenom"
+                                title="Entrez votre prénom" placeholder="Prénom" required>
+                        </div>
+                        <div class="livraison__gridEl--2">
+                            <label for="nom" class="livraison__gridLabel">Nom</label>
+                            <input type="text" class="livraison__gridInput" id="nom" name="nom" title="Entrez votre nom"
+                                placeholder="Nom" required>
+                        </div>
+                        <div class="livraison__gridEl--3">
+                            <label for="email" class="livraison__gridLabel">Adresse e-mail</label>
+                            <input type="email" class="livraison__gridInput" id="email" name="email"
+                                title="Entrez votre adresse e-mail" placeholder="solo.leveling@mail.com" required>
+                        </div>
+                        <div class="livraison__gridEl--4">
+                            <label for="telephone" class="livraison__gridLabel">Numéro de téléphone</label>
+                            <input type="tel" class="livraison__gridInput" id="telephone" name="telephone"
+                                title="Entrez votre numéro de téléphone" placeholder="+32 XXX XX XX XX" required>
+                        </div>
+                        <div class="livraison__gridEl--5">
+                            <label for="adresse" class="livraison__gridLabel">Adresse</label>
+                            <input type="text" class="livraison__gridInput" id="adresse" name="adresse"
+                                title="Entrez votre adresse" placeholder="Rue des combattants" required>
+                        </div>
+                        <div class="livraison__gridEl--6">
+                            <label for="codepostal" class="livraison__gridLabel">Code postal</label>
+                            <input type="number" class="livraison__gridInput" id="codepostal" name="codepostal"
+                                title="Entrez votre code postal" placeholder="1230" required>
+                        </div>
+                        <div class="livraison__gridEl--7">
+                            <label for="ville" class="livraison__gridLabel">Ville</label>
+                            <input type="text" class="livraison__gridInput" id="ville" name="ville" placeholder="Tokyo"
+                                title="Entrez votre ville" required>
+                        </div>
+                        <div class="livraison__gridEl--8">
+                            <label for="pays" class="livraison__gridLabel">Pays</label>
+                            <select name="pays" class="livraison__gridInput" id="pays" required
+                                title="Entrez votre pays de résidence">
+                                <option label=" "> </option>
+                                <option value="Albanie">Albanie</option>
+                                <option value="Allemagne">Allemagne</option>
+                                <option value="Andorre">Andorre</option>
+                                <option value="Autriche">Autriche</option>
+                                <option value="Belgique">Belgique</option>
+                                <option value="Bélarus">Bélarus</option>
+                                <option value="Bosnie-Herzégovine">Bosnie-Herzégovine</option>
+                                <option value="Bulgarie">Bulgarie</option>
+                                <option value="Chypre">Chypre</option>
+                                <option value="Croatie">Croatie</option>
+                                <option value="Danemark">Danemark</option>
+                                <option value="Espagne">Espagne</option>
+                                <option value="Estonie">Estonie</option>
+                                <option value="Finlande">Finlande</option>
+                                <option value="France">France</option>
+                                <option value="Grèce">Grèce</option>
+                                <option value="Hongrie">Hongrie</option>
+                                <option value="Irlande">Irlande</option>
+                                <option value="Islande">Islande</option>
+                                <option value="Italie">Italie</option>
+                                <option value="Kazakhstan">Kazakhstan</option>
+                                <option value="Lettonie">Lettonie</option>
+                                <option value="Liechtenstein">Liechtenstein</option>
+                                <option value="Lituanie">Lituanie</option>
+                                <option value="Luxembourg">Luxembourg</option>
+                                <option value="Macédoine du Nord">Macédoine du Nord</option>
+                                <option value="Malte">Malte</option>
+                                <option value="Moldavie">Moldavie</option>
+                                <option value="Monaco">Monaco</option>
+                                <option value="Monténégro">Monténégro</option>
+                                <option value="Norvège">Norvège</option>
+                                <option value="Pays-Bas">Pays-Bas</option>
+                                <option value="Pologne">Pologne</option>
+                                <option value="Portugal">Portugal</option>
+                                <option value="Roumanie">Roumanie</option>
+                                <option value="Royaume-Uni">Royaume-Uni</option>
+                                <option value="Russie">Russie</option>
+                                <option value="Saint-Marin">Saint-Marin</option>
+                                <option value="Serbie">Serbie</option>
+                                <option value="Slovaquie">Slovaquie</option>
+                                <option value="Slovénie">Slovénie</option>
+                                <option value="Suède">Suède</option>
+                                <option value="Suisse">Suisse</option>
+                                <option value="Tchéquie">Tchéquie</option>
+                                <option value="Turquie">Turquie</option>
+                                <option value="Ukraine">Ukraine</option>
+                                <option value="Vatican">Vatican</option>
+                            </select>
+                        </div>
+                    </fieldset>
+                    <div class="cadeau">
+                        <div class="cadeau__checkbox">
+                            <input class="cadeau__checkboxInput" type="checkbox" id="cadeau" value="cadeau"
+                                name="cadeau">
+                            <label class="cadeau__checkboxLabel" for="cadeau">Offrir en cadeau</label>
+
+                        </div>
+                        <div>
+                            <fieldset class="cadeau__gridParent">
+                                <div class="cadeau__gridEl--1">
+                                    <label for="prenomCadeau" class="cadeau__gridLabel">Prénom</label>
+                                    <input type="text" class="cadeau__gridInput" id="prenomCadeau" name="prenomCadeau"
+                                        title="Entrez votre prénom" placeholder="Prénom">
+                                </div>
+                                <div class="cadeau__gridEl--2">
+                                    <label for="nomCadeau" class="cadeau__gridLabel">Nom</label>
+                                    <input type="text" class="cadeau__gridInput" id="nomCadeau" name="nomCadeau"
+                                        title="Entrez votre nom" placeholder="Nom">
+                                </div>
+                                <div class="cadeau__gridEl--3">
+                                    <label for="emailCadeau" class="cadeau__gridLabel">Adresse e-mail</label>
+                                    <input type="email" class="cadeau__gridInput" id="emailCadeau" name="emailCadeau"
+                                        title="Entrez votre adresse e-mail" placeholder="solo.leveling@mail.com">
+                                </div>
+                                <div class="cadeau__gridEl--4">
+                                    <label for="telephoneCadeau" class="cadeau__gridLabel">Numéro de téléphone</label>
+                                    <input type="tel" class="cadeau__gridInput" id="telephoneCadeau"
+                                        name="telephoneCadeau" title="Entrez votre numéro de téléphone"
+                                        placeholder="+32 XXX XX XX XX">
+                                </div>
+                                <div class="cadeau__gridEl--5">
+                                    <label for="adresseCadeau" class="cadeau__gridLabel">Adresse</label>
+                                    <input type="text" class="cadeau__gridInput" id="adresseCadeau" name="adresseCadeau"
+                                        title="Entrez votre adresse" placeholder="Rue des combattants">
+                                </div>
+                                <div class="cadeau__gridEl--6">
+                                    <label for="codepostalCadeau" class="cadeau__gridLabel">Code postal</label>
+                                    <input type="number" class="cadeau__gridInput" id="codepostalCadeau"
+                                        name="codepostalCadeau" title="Entrez votre code postal" placeholder="1230">
+                                </div>
+                                <div class="cadeau__gridEl--7">
+                                    <label for="villeCadeau" class="cadeau__gridLabel">Ville</label>
+                                    <input type="text" class="cadeau__gridInput" id="villeCadeau" name="villeCadeau"
+                                        placeholder="Tokyo" title="Entrez votre ville">
+                                </div>
+                                <div class="cadeau__gridEl--8">
+                                    <label for="paysCadeau" class="cadeau__gridLabel">Pays</label>
+                                    <select name="paysCadeau" class="cadeau__gridInput" id="paysCadeau"
+                                        title="Entrez votre pays de résidence">
+                                        <option label=" "> </option>
+                                        <option value="Albanie">Albanie</option>
+                                        <option value="Allemagne">Allemagne</option>
+                                        <option value="Andorre">Andorre</option>
+                                        <option value="Autriche">Autriche</option>
+                                        <option value="Belgique">Belgique</option>
+                                        <option value="Bélarus">Bélarus</option>
+                                        <option value="Bosnie-Herzégovine">Bosnie-Herzégovine</option>
+                                        <option value="Bulgarie">Bulgarie</option>
+                                        <option value="Chypre">Chypre</option>
+                                        <option value="Croatie">Croatie</option>
+                                        <option value="Danemark">Danemark</option>
+                                        <option value="Espagne">Espagne</option>
+                                        <option value="Estonie">Estonie</option>
+                                        <option value="Finlande">Finlande</option>
+                                        <option value="France">France</option>
+                                        <option value="Grèce">Grèce</option>
+                                        <option value="Hongrie">Hongrie</option>
+                                        <option value="Irlande">Irlande</option>
+                                        <option value="Islande">Islande</option>
+                                        <option value="Italie">Italie</option>
+                                        <option value="Kazakhstan">Kazakhstan</option>
+                                        <option value="Lettonie">Lettonie</option>
+                                        <option value="Liechtenstein">Liechtenstein</option>
+                                        <option value="Lituanie">Lituanie</option>
+                                        <option value="Luxembourg">Luxembourg</option>
+                                        <option value="Macédoine du Nord">Macédoine du Nord</option>
+                                        <option value="Malte">Malte</option>
+                                        <option value="Moldavie">Moldavie</option>
+                                        <option value="Monaco">Monaco</option>
+                                        <option value="Monténégro">Monténégro</option>
+                                        <option value="Norvège">Norvège</option>
+                                        <option value="Pays-Bas">Pays-Bas</option>
+                                        <option value="Pologne">Pologne</option>
+                                        <option value="Portugal">Portugal</option>
+                                        <option value="Roumanie">Roumanie</option>
+                                        <option value="Royaume-Uni">Royaume-Uni</option>
+                                        <option value="Russie">Russie</option>
+                                        <option value="Saint-Marin">Saint-Marin</option>
+                                        <option value="Serbie">Serbie</option>
+                                        <option value="Slovaquie">Slovaquie</option>
+                                        <option value="Slovénie">Slovénie</option>
+                                        <option value="Suède">Suède</option>
+                                        <option value="Suisse">Suisse</option>
+                                        <option value="Tchéquie">Tchéquie</option>
+                                        <option value="Turquie">Turquie</option>
+                                        <option value="Ukraine">Ukraine</option>
+                                        <option value="Vatican">Vatican</option>
+                                    </select>
+                                </div>
+                            </fieldset>
+                        </div>
                     </div>
-                    <div class="div2">
-                        <label for="nom">Nom :</label>
-                        <input type="text" id="nom" name="nom" title="Entrez votre nom" placeholder="Nom" required>
+                </div>
+                <div class="recap">
+                    <div class="recap__content">
+                        <h3 class="recap__subtitle">Produit</h3>
+
+                        <p class="recap__paraNoItem" id="no-items-message">Aucun article n'est sélectionné.</p>
+
+                        <ul class="recap__list recap__list--book">
+                            <li class="recap__el">Solo Leveling - KBooks <br>
+                                Coffret complet (14 livres)</li>
+                            <li class="recap__el" id="recapValue__book">0.00€</li>
+                        </ul>
+                        <ul class="recap__list recap__list--ebook">
+                            <li class="recap__el">Solo Leveling - KBooks<br>
+                                Kindle (14 fichiers livres)</li>
+                            <li class="recap__el" id="recapValue__ebook">0.00€</li>
+                        </ul>
+
+                        <ul class="recap__list">
+                            <li class="recap__el recap__el--big">Total :</li>
+                            <li class="recap__el recap__el--big" id="recapValue__total">0.00€</li>
+                        </ul>
                     </div>
-                    <div class="div3">
-                        <label for="email">Adresse e-mail :</label>
-                        <input type="email" id="email" name="email" title="Entrez votre adresse e-mail"
-                            placeholder="solo.leveling@mail.com" required>
-                    </div>
-                    <div class="div4">
-                        <label for="telephone">Numéro de téléphone :</label>
-                        <input type="tel" id="telephone" name="telephone" title="Entrez votre numéro de téléphone"
-                            placeholder="+32 XXX XX XX XX" required>
-                    </div>
-                    <div class="div5">
-                        <label for="adresse">Adresse :</label>
-                        <input type="text" id="adresse" name="adresse" title="Entrez votre adresse"
-                            placeholder="Rue des combattants" required>
-                    </div>
-                    <div class="div6">
-                        <label for="codepostal">Code postal :</label>
-                        <input type="number" id="codepostal" name="codepostal" title="Entrez votre code postal"
-                            placeholder="1230" required>
-                    </div>
-                    <div class="div7">
-                        <label for="ville">Ville :</label>
-                        <input type="text" id="ville" name="ville" placeholder="Tokyo" title="Entrez votre ville"
-                            required>
-                    </div>
-                    <div class="div8">
-                        <label for="pays">Pays*</label>
-                        <select name="pays" id="pays" required placeholder="Japon"
-                            title="Entrez votre pays de résidence">
-                            <option label=" "> </option>
-                            <option value="Albanie">Albanie</option>
-                            <option value="Allemagne">Allemagne</option>
-                            <option value="Andorre">Andorre</option>
-                            <option value="Autriche">Autriche</option>
-                            <option value="Belgique">Belgique</option>
-                            <option value="Bélarus">Bélarus</option>
-                            <option value="Bosnie-Herzégovine">Bosnie-Herzégovine</option>
-                            <option value="Bulgarie">Bulgarie</option>
-                            <option value="Chypre">Chypre</option>
-                            <option value="Croatie">Croatie</option>
-                            <option value="Danemark">Danemark</option>
-                            <option value="Espagne">Espagne</option>
-                            <option value="Estonie">Estonie</option>
-                            <option value="Finlande">Finlande</option>
-                            <option value="France">France</option>
-                            <option value="Grèce">Grèce</option>
-                            <option value="Hongrie">Hongrie</option>
-                            <option value="Irlande">Irlande</option>
-                            <option value="Islande">Islande</option>
-                            <option value="Italie">Italie</option>
-                            <option value="Kazakhstan">Kazakhstan</option>
-                            <option value="Lettonie">Lettonie</option>
-                            <option value="Liechtenstein">Liechtenstein</option>
-                            <option value="Lituanie">Lituanie</option>
-                            <option value="Luxembourg">Luxembourg</option>
-                            <option value="Macédoine du Nord">Macédoine du Nord</option>
-                            <option value="Malte">Malte</option>
-                            <option value="Moldavie">Moldavie</option>
-                            <option value="Monaco">Monaco</option>
-                            <option value="Monténégro">Monténégro</option>
-                            <option value="Norvège">Norvège</option>
-                            <option value="Pays-Bas">Pays-Bas</option>
-                            <option value="Pologne">Pologne</option>
-                            <option value="Portugal">Portugal</option>
-                            <option value="Roumanie">Roumanie</option>
-                            <option value="Royaume-Uni">Royaume-Uni</option>
-                            <option value="Russie">Russie</option>
-                            <option value="Saint-Marin">Saint-Marin</option>
-                            <option value="Serbie">Serbie</option>
-                            <option value="Slovaquie">Slovaquie</option>
-                            <option value="Slovénie">Slovénie</option>
-                            <option value="Suède">Suède</option>
-                            <option value="Suisse">Suisse</option>
-                            <option value="Tchéquie">Tchéquie</option>
-                            <option value="Turquie">Turquie</option>
-                            <option value="Ukraine">Ukraine</option>
-                            <option value="Vatican">Vatican</option>
-                        </select>
+                    <div class="livraison__linkSubmit--center">
+                        <button class="livraison__linkSubmit" type="submit">Continuer la
+                            commande</button>
                     </div>
                 </div>
 
-                <div style="text-align: center; margin-top: 20px;">
-                    <input type="submit" value="Envoyer">
-                </div>
             </form>
-        </section>
-
-        <section class="panierTotal">
-            <h2 class="panierTotal__title">Total panier</h2>
-            <div class="panierTotal__content">
-                <h3 class="panierTotal__subtitle">Produit</h3>
-
-                <p class="panierTotal__paraNoItem" id="no-items-message">Aucun article n'est sélectionné.</p>
-
-                <ul class="panierTotal__list panierTotal__list--book">
-                    <li class="panierTotal__el">Solo Leveling - KBooks <br>
-                        Coffret complet (14 livres)</li>
-                    <li class="panierTotal__el" id="value__book">0.00€</li>
-                </ul>
-                <ul class="panierTotal__list panierTotal__list--ebook">
-                    <li class="panierTotal__el">Solo Leveling - KBooks<br>
-                        Kindle (14 fichiers livres)</li>
-                    <li class="panierTotal__el" id="value__ebook">0.00€</li>
-                </ul>
-
-                <ul class="panierTotal__list">
-                    <li class="panierTotal__el panierTotal__el--big">Total :</li>
-                    <li class="panierTotal__el panierTotal__el--big" id="value__total">0.00€</li>
-                </ul>
-            </div>
-            <ul class="panierTotal__listButton">
-                <li class="panierTotal__link"><a id="order-button" class="disabled" href="livraison.html">Commander</a>
-                </li>
-            </ul>
-            <img class="panierTotal__img" src="assets/images/panier-solo-L.png"
-                alt="Illustration du personnage principale de Solo Leveling">
-
         </section>
 
     </main>

@@ -1,28 +1,29 @@
-.livraison {
-    padding-left: 20px;
-    padding-right: 20px;
+.cadeau {
+    &__checkbox {
+        margin-top: 63px;
+    }
 
-    &__title {
-        font-family: "Libre Caslon Display", serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 47px;
-        color: #fff;
+    &__checkboxInput {}
+
+    &__checkboxLabel {
+        font-family: "Manrope", sans-serif;
         margin: 0;
-        margin-top: 47px;
-        margin-bottom: 47px;
+        font-size: 17px;
+        color: #ffffff;
+        margin-bottom: 11px;
     }
 
     &__form {}
 
     &__gridParent {
-        display: grid;
+        display: none;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(5, 1fr);
         grid-column-gap: 20px;
         grid-row-gap: 20px;
         border: 0;
         padding: 0;
+        margin-top: 36px;
     }
 
     &__gridLabel {
@@ -38,7 +39,7 @@
         font-size: 1em;
         background-color: rgba(0, 0, 0, 0);
         border: 1px solid #ffffff;
-        border-radius: 2px;
+        border-radius: 4px;
         font-family: "Manrope", sans-serif;
         margin: 0;
         color: #ffffff;
@@ -91,49 +92,33 @@
     &__gridLabel {
         margin-bottom: 5px;
     }
-
-    &__linkSubmit {
-        font-family: "Manrope", sans-serif;
-        font-size: 20px;
-        border: #fff 1px solid;
-        padding: 11px 15px;
-        margin: 0 auto;
-        margin-top: 47px;
-        background-color: #000616;
-        color: #fff;
-        box-sizing: border-box;
-
-        &--center {
-            display: flex;
-            justify-content: center;
-        }
-    }
 }
 
 @media (min-width:750px) {
-    .livraison {
-        padding-left: 40px;
-        padding-right: 40px;
-
-        &__title {
-            font-family: "Libre Caslon Display", serif;
-            font-weight: 400;
-            font-style: normal;
-            font-size: 63px;
-            color: #fff;
-            margin: 0;
+    .cadeau {
+        &__checkbox {
             margin-top: 63px;
-            margin-bottom: 63px;
+        }
+
+        &__checkboxInput {}
+
+        &__checkboxLabel {
+            font-family: "Manrope", sans-serif;
+            margin: 0;
+            font-size: 20px;
+            color: #ffffff;
+            margin-bottom: 11px;
         }
 
         &__form {}
 
         &__gridParent {
-            display: grid;
+            display: none;
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: repeat(5, 1fr);
             grid-column-gap: 40px;
             grid-row-gap: 40px;
+            margin-top: 36px;
         }
 
         &__gridLabel {
@@ -203,53 +188,49 @@
             margin-bottom: 7px;
         }
 
-        &__linkSubmit {
-            font-size: 27px;
-            border: #fff 2px solid;
-            padding: 15px 20px;
-            background-color: #000616;
-            color: #fff;
-        }
     }
 }
 
 @media (min-width:1200px) {
-
-    .livraison {
-        padding-left: 69px;
-        padding-right: 69px;
-
-        &__title {
-            font-family: "Libre Caslon Display", serif;
-            font-weight: 400;
-            font-style: normal;
-            font-size: 52px;
-            color: #fff;
-            margin: 0;
-            margin-bottom: 69px;
-            margin-top: 69px;
+    .cadeau {
+        &__checkbox {
+            margin-top: 63px;
         }
 
-        &__form {
-            width: 100vw;
-            display: flex;
-            justify-content: space-around;
+        &__checkboxInput {
+            width: 15px;
+            height: 15px;
+        }
+
+        &__checkboxLabel {
+            font-family: "Manrope", sans-serif;
+            margin: 0;
+            font-size: 20px;
+            color: #ffffff;
+            margin-bottom: 11px;
+        }
+
+        &__form {}
+
+        &__content {
+            display: none;
         }
 
         &__gridParent {
-            display: grid;
+            display: none;
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: repeat(5, 1fr);
-            grid-column-gap: 29px;
-            grid-row-gap: 29px;
+            grid-column-gap: 40px;
+            grid-row-gap: 40px;
+            margin-top: 36px;
         }
 
         &__gridLabel {
             font-family: "Manrope", sans-serif;
             margin: 0;
-            font-size: 22px;
+            font-size: 20px;
             color: #ffffff;
-            margin-bottom: 17px;
+            margin-bottom: 15px;
         }
 
         &__gridInput {
@@ -311,14 +292,5 @@
             margin-bottom: 7px;
         }
 
-        &__linkSubmit {
-            font-size: 29px;
-            border: #fff 2px solid;
-            padding: 15px 20px;
-            background-color: #000616;
-            color: #fff;
-
-
-        }
     }
 }

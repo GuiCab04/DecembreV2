@@ -1,0 +1,259 @@
+.payement {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    &__title {
+        font-family: "Libre Caslon Display", serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 47px;
+        color: #fff;
+        margin: 0;
+        margin-top: 47px;
+        margin-bottom: 47px;
+    }
+
+    &__method {
+        margin-bottom: 36px;
+    }
+
+
+    &__creditParent {
+        display: none;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        border: 0;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    &__gridLabel {
+        font-family: "Manrope", sans-serif;
+        margin: 0;
+        font-size: 15px;
+        color: #ffffff;
+        margin-bottom: 11px;
+    }
+
+    &__gridInput {
+        padding: 8px;
+        font-size: 1em;
+        background-color: rgba(0, 0, 0, 0);
+        border: 1px solid #ffffff;
+        border-radius: 2px;
+        font-family: "Manrope", sans-serif;
+        margin: 0;
+        color: #ffffff;
+    }
+
+
+    &__creditEl {
+        &--1 {
+            grid-area: 1 / 1 / 2 / 5;
+        }
+
+        &--2 {
+            grid-area: 2 / 1 / 3 / 3;
+        }
+
+        &--3 {
+            grid-area: 2 / 3 / 3 / 5;
+        }
+
+        &--4 {
+            grid-area: 3 / 1 / 4 / 5;
+        }
+    }
+
+    &__creditParent div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__debitParent {
+        display: none;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        border: 0;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    &__debitParent div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__debitEl {
+        &--1 {
+            grid-area: 1 / 1 / 2 / 5;
+        }
+
+        &--2 {
+            grid-area: 2 / 1 / 3 / 2;
+        }
+
+        &--3 {
+            grid-area: 3 / 1 / 4 / 2;
+        }
+    }
+
+    &__radioLabel {
+        font-family: "Manrope", sans-serif;
+        margin: 0;
+        font-size: 15px;
+        color: #ffffff;
+        margin-bottom: 11px;
+        display: flex;
+        align-items: center;
+
+        input {
+            margin-right: 11px;
+            width: 20px;
+            height: 20px;
+        }
+
+    }
+
+    &__radioImg {
+        height: 17px;
+        margin-left: 9px;
+    }
+}
+
+@media (min-width:750px) {
+    .payement {
+        padding-left: 40px;
+        padding-right: 40px;
+
+        &__title {
+            font-family: "Libre Caslon Display", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 63px;
+            color: #fff;
+            margin: 0;
+            margin-top: 63px;
+            margin-bottom: 63px;
+        }
+
+        &__method {
+            margin-bottom: 47px;
+        }
+
+
+        &__creditParent {
+            display: none;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-column-gap: 40px;
+            grid-row-gap: 40px;
+            border: 0;
+            padding: 0;
+            margin-top: 40px;
+        }
+
+        &__gridLabel {
+            font-family: "Manrope", sans-serif;
+            margin: 0;
+            font-size: 20px;
+            color: #ffffff;
+            margin-bottom: 11px;
+        }
+
+        &__gridInput {
+            padding: 11px;
+            font-size: 1em;
+            background-color: rgba(0, 0, 0, 0);
+            border: 1px solid #ffffff;
+            border-radius: 2px;
+            font-family: "Manrope", sans-serif;
+            margin: 0;
+            color: #ffffff;
+        }
+
+
+        &__creditEl {
+            &--1 {
+                grid-area: 1 / 1 / 2 / 5;
+            }
+
+            &--2 {
+                grid-area: 2 / 1 / 3 / 3;
+            }
+
+            &--3 {
+                grid-area: 2 / 3 / 3 / 5;
+            }
+
+            &--4 {
+                grid-area: 3 / 1 / 4 / 5;
+            }
+        }
+
+        &__creditParent div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        &__debitParent {
+            display: none;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            grid-column-gap: 40px;
+            grid-row-gap: 40px;
+            border: 0;
+            padding: 0;
+            margin-top: 40px;
+        }
+
+        &__debitParent div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        &__debitEl {
+            &--1 {
+                grid-area: 1 / 1 / 2 / 5;
+            }
+
+            &--2 {
+                grid-area: 2 / 1 / 3 / 2;
+            }
+
+            &--3 {
+                grid-area: 3 / 1 / 4 / 2;
+            }
+        }
+
+        &__radioLabel {
+            font-family: "Manrope", sans-serif;
+            margin: 0;
+            font-size: 20px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+
+            input {
+                margin-right: 15px;
+                width: 27px;
+                height: 27px;
+            }
+
+        }
+
+        &__radioImg {
+            height: 20px;
+            margin-left: 13px;
+        }
+    }
+}

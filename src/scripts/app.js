@@ -128,64 +128,58 @@ function initializeAnimation() {
 initializeAnimation();
 
 
-
 //COUNT 
+
 
 const quantitySelectBook = document.getElementById("quantity_book");
 const quantitySelectEbook = document.getElementById("quantity_ebook");
-
-const panierBook = document.querySelector(".panier__contentBook #value__book");
-const panierEbook = document.querySelector(".panier__contentEbook #value__ebook");
-
+const panierBook = document.querySelector(".panier__contentBook #value__book_panier");
+const panierEbook = document.querySelector(".panier__contentEbook #value__ebook_panier");
 const totalBookList = document.querySelector(".panierTotal__list--book");
 const totalEbookList = document.querySelector(".panierTotal__list--ebook");
-
-const totalBook = document.querySelector(".panierTotal__list--book #value__book");
-const totalEbook = document.querySelector(".panierTotal__list--ebook #value__ebook");
+const totalBook = document.querySelector(".panierTotal__list--book #value__book_total");
+const totalEbook = document.querySelector(".panierTotal__list--ebook #value__ebook_total");
 const valueTotal = document.getElementById("value__total");
-
 const noItemsMessage = document.getElementById("no-items-message");
+
 
 function updateTotals() {
     const pricePerBook = 169.99;
     const pricePerEbook = 9.99;
-
     const quantityBook = Number(quantitySelectBook.value);
     const quantityEbook = Number(quantitySelectEbook.value);
-
     const subtotalBook = (pricePerBook * quantityBook).toFixed(2);
     const subtotalEbook = (pricePerEbook * quantityEbook).toFixed(2);
-
-    // Mettre à jour les sous-totaux dans les deux sections (panier et total)
     if (panierBook) panierBook.textContent = `${subtotalBook}€`;
     if (totalBook) totalBook.textContent = `${subtotalBook}€`;
-
     if (panierEbook) panierEbook.textContent = `${subtotalEbook}€`;
     if (totalEbook) totalEbook.textContent = `${subtotalEbook}€`;
-
-    // Afficher ou masquer les sections en fonction des sous-totaux
     if (subtotalBook > 0) {
         totalBookList.style.display = "flex";
     } else {
         totalBookList.style.display = "none";
     }
-
     if (subtotalEbook > 0) {
         totalEbookList.style.display = "flex";
     } else {
         totalEbookList.style.display = "none";
     }
-
-    // Calculer et mettre à jour le total global
     const total = (parseFloat(subtotalBook) + parseFloat(subtotalEbook)).toFixed(2);
     if (valueTotal) valueTotal.textContent = `${total}€`;
-
-    // Afficher ou masquer le message "Aucun article n'est sélectionné"
     if (subtotalBook == 0 && subtotalEbook == 0) {
         noItemsMessage.style.display = "block";
     } else {
         noItemsMessage.style.display = "none";
     }
+    const cartData = {
+        subtotalBook: subtotalBook,
+        subtotalEbook: subtotalEbook,
+        total: total,
+        quantityBook: quantityBook,
+        quantityEbook: quantityEbook
+    };
+
+    localStorage.setItem('cartData', JSON.stringify(cartData));
 }
 
 if (quantitySelectBook) {
@@ -196,9 +190,144 @@ if (quantitySelectEbook) {
     quantitySelectEbook.addEventListener("input", updateTotals);
 }
 
+//LOAD DATA PRIX
+
+function loadCartData() {
+    const storedCartData = localStorage.getItem('cartData');
+    if (storedCartData) {
+        const cartData = JSON.parse(storedCartData);
+        const recapValueBook = document.getElementById('recapValue__book');
+        const recapValueEbook = document.getElementById('recapValue__ebook');
+        const recapValueTotal = document.getElementById('recapValue__total');
+        const noItemsMessageRecap = document.getElementById("no-items-message");
+
+        if (recapValueBook && cartData.subtotalBook > 0) {
+            recapValueBook.textContent = `${cartData.subtotalBook}€`;
+        } else if (recapValueBook) {
+            recapValueBook.parentElement.style.display = 'none';
+        }
+
+        if (recapValueEbook && cartData.subtotalEbook > 0) {
+            recapValueEbook.textContent = `${cartData.subtotalEbook}€`;
+        } else if (recapValueEbook) {
+            recapValueEbook.parentElement.style.display = 'none';
+        }
+
+        if (recapValueTotal) {
+            recapValueTotal.textContent = `${cartData.total}€`;
+        }
+
+        if (noItemsMessageRecap && cartData.subtotalBook == 0 && cartData.subtotalEbook == 0) {
+            noItemsMessageRecap.style.display = "block";
+        } else if (noItemsMessageRecap) {
+            noItemsMessageRecap.style.display = "none";
+        }
+    }
+}
+loadCartData();
+
+//SAVE DATA LIVRAISON
+
+function saveFormData() {
+    const formData = {
+        prenom: document.getElementById('prenom').value,
+        nom: document.getElementById('nom').value,
+        email: document.getElementById('email').value,
+        telephone: document.getElementById('telephone').value,
+        adresse: document.getElementById('adresse').value,
+        codepostal: document.getElementById('codepostal').value,
+        ville: document.getElementById('ville').value,
+        pays: document.getElementById('pays').value,
+        prenomCadeau: document.getElementById('prenomCadeau').value,
+        nomCadeau: document.getElementById('nomCadeau').value,
+        emailCadeau: document.getElementById('emailCadeau').value,
+        telephoneCadeau: document.getElementById('telephoneCadeau').value,
+        adresseCadeau: document.getElementById('adresseCadeau').value,
+        codepostalCadeau: document.getElementById('codepostalCadeau').value,
+        villeCadeau: document.getElementById('villeCadeau').value,
+        paysCadeau: document.getElementById('paysCadeau').value
+    };
+
+    localStorage.setItem('formData', JSON.stringify(formData));
+}
+
+function handleSubmit(event) {
+    event.preventDefault();
+    saveFormData();
+    window.location.href = 'payement.html';
+}
+
+//CADEAU
+
+const cadeauCheckbox = document.getElementById('cadeau');
+
+if (cadeauCheckbox) {
+    cadeauCheckbox.addEventListener('change', function () {
+        const gridParent = document.querySelector('.cadeau__gridParent');
+        const inputs = gridParent.querySelectorAll('input, select');
+
+        if (this.checked) {
+            gridParent.style.display = 'grid';
+            inputs.forEach(input => {
+                input.required = true;
+            });
+        } else {
+            gridParent.style.display = 'none';
+            inputs.forEach(input => {
+                input.required = false;
+            });
+        }
+    });
+}
 
 
+//RADIO
 
+document.querySelectorAll('input[name="paymentMethod"]').forEach((elem) => {
+    elem.addEventListener('change', function (e) {
+        let creditParent = document.querySelector('.payement__creditParent');
+        let debitParent = document.querySelector('.payement__debitParent');
 
+        // Sélectionnez tous les champs d'entrée à l'intérieur des fieldsets
+        let creditInputs = creditParent.querySelectorAll('input');
+        let debitInputs = debitParent.querySelectorAll('input');
+
+        if (this.value === 'credit') {
+            // Afficher la section crédit et masquer la section débit
+            creditParent.style.display = 'grid';
+            debitParent.style.display = 'none';
+
+            // Rendre les champs de crédit requis
+            creditInputs.forEach(input => input.setAttribute('required', 'required'));
+            // Retirer le statut requis des champs de débit
+            debitInputs.forEach(input => input.removeAttribute('required'));
+
+        } else if (this.value === 'debit') {
+            // Afficher la section débit et masquer la section crédit
+            creditParent.style.display = 'none';
+            debitParent.style.display = 'grid';
+
+            // Rendre les champs de débit requis
+            debitInputs.forEach(input => input.setAttribute('required', 'required'));
+            // Retirer le statut requis des champs de crédit
+            creditInputs.forEach(input => input.removeAttribute('required'));
+
+        } else if (this.value === 'paypal') {
+            // Masquer les sections crédit et débit
+            creditParent.style.display = 'none';
+            debitParent.style.display = 'none';
+
+            // Retirer le statut requis des champs de crédit et de débit
+            creditInputs.forEach(input => input.removeAttribute('required'));
+            debitInputs.forEach(input => input.removeAttribute('required'));
+        }
+    });
+});
+
+// Initialisation de l'affichage
+let selectedPaymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
+if (selectedPaymentMethod) {
+    selectedPaymentMethod.dispatchEvent(new Event('change'));
+}
 
 

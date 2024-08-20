@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Cabaraux Guillaume">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:site_name" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Solo Leveling | Livraison">
+    <meta property="og:url" content="https://guillaume-cabaraux.be/projets/decembre">
+    <meta property="og:image" content="assets/images/logo.png">
+    <meta property="og:description" content="Solo Leveling | Livraison">
+    <link rel="shortcut icon" href="assets/images/logo.png">
+    <link rel="stylesheet" href="styles/app.css">
+    <script src="scripts/app.js" defer></script>
+    <title>Solo Leveling | Livraison</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Manrope:wght@200..800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+
+        <div class="nav--mobile">
+            <a href="index.html"><img class="nav__logo" src="assets/images/logo.png"
+                    alt="Logo avec comme écriture 'Solo Leveling'"></a>
+            <button type="button" class="menu__nav--toggle" id="menuToggle">
+                <span class="menu__bar"></span>
+                <span class="menu__bar"></span>
+                <span class="menu__bar"></span>
+            </button>
+            <nav class="menu">
+                <ul class="menu__list" id="menuList">
+                    <li class="menu__el"><a href="#">Accueil</a></li>
+                    <li class="menu__el"><a href="#">Mon panier<img src="assets/images/panier.svg"
+                                alt="Icone qui représente un panier"></a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <nav class="nav--desktop">
+            <a href="index.html"><img class="nav__logo" src="assets/images/logo.png"
+                    alt="Logo avec comme écriture 'Solo Leveling'"></a>
+            <ul class="nav__list">
+                <li class="nav__el nav__el--button"><a href="index.html">Accueil</a></li>
+                <li class="nav__el nav__el--button"><a href="panier.html">Mon panier<img src="assets/images/panier.svg"
+                            alt="Icone qui représente un panier"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="payement">
+            <h1 class="payement__title">Payement</h1>
+            <form class="payement__form">
+                <div class="payement__method">
+                    <label class="payement__radioLabel">
+                        <input type="radio" name="paymentMethod" value="credit">Carte de
+                        crédit
+                        <img class="payement__radioImg" src="assets/images/mastercard.png" alt="Logo de mastercard">
+                        <img class="payement__radioImg" src="assets/images/visa.png" alt="Logo de visa">
+                    </label>
+
+                    <fieldset class="payement__creditParent">
+                        <div class="payement__creditEl--1">
+                            <label class="payement__gridLabel" for="creditCarte">Numéro de carte</label>
+                            <input class="payement__gridInput" type="text" id="creditCarte" name="creditCarte"
+                                title="Entrez votre numéro de carte" placeholder="BE01 2345 6789 0123">
+                        </div>
+                        <div class="payement__creditEl--2">
+                            <label class="payement__gridLabel" for="creditExpiration">Expiration</label>
+                            <input class="payement__gridInput" type="text" id="creditExpiration" name="creditExpiration"
+                                title="Entrez la date d'expiration de votre carte" placeholder="XX/XX">
+                        </div>
+                        <div class="payement__creditEl--3">
+                            <label class="payement__gridLabel" for="creditCvv">CVV</label>
+                            <input class="payement__gridInput" type="text" id="creditCvv" name="creditCvv"
+                                title="Entrez le numéro CVV de votre carte" placeholder="123">
+                        </div>
+                        <div class="payement__creditEl--4">
+                            <label class="payement__gridLabel" for="creditTitulaire">Titulaire</label>
+                            <input class="payement__gridInput" type="text" id="creditTitulaire" name="creditTitulaire"
+                                title="Entrez le nom titulaire de la carte" placeholder="Prénom Nom">
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="payement__method">
+                    <label class="payement__radioLabel">
+                        <input type="radio" name="paymentMethod" value="debit">
+                        Carte de débit
+                        <img class="payement__radioImg" src="assets/images/bancontact.png" alt="Logo de bancontact">
+                        <img class="payement__radioImg" src="assets/images/maestro.png" alt="Logo de maestro">
+                    </label>
+
+                    <fieldset class="payement__debitParent">
+                        <div class="payement__debitEl--1">
+                            <label class="payement__gridLabel" for="debitCarte">Numéro de carte</label>
+                            <input class="payement__gridInput" type="text" id="debitCarte" name="debitCarte"
+                                title="Entrez votre numéro de carte" placeholder="BE01 2345 6789 0123">
+                        </div>
+                        <div class="payement__debitEl--2">
+                            <label class="payement__gridLabel" for="debitExpiration">Expiration</label>
+                            <input class="payement__gridInput" type="text" id="debitExpiration" name="debitExpiration"
+                                title="Entrez la date d'expiration de votre carte" placeholder="XX/XX">
+                        </div>
+                        <div class="payement__debitEl--3">
+                            <label class="payement__gridLabel" for="debitTitulaire">Titulaire</label>
+                            <input class="payement__gridInput" type="text" id="debitTitulaire" name="debitTitulaire"
+                                title="Entrez le nom titulaire de la carte" placeholder="Prénom Nom">
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="payement__method">
+                    <label class="payement__radioLabel">
+                        <input type="radio" name="paymentMethod" value="paypal">
+                        Paypal
+                        <img class="payement__radioImg" src="assets/images/paypal.png" alt="Logo de paypal">
+                    </label>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- Submit button -->
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+
+
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="footer">
+        <h2 class="footer__title">Infos pratiques</h2>
+        <div class="footer__content">
+            <ul class="footer__list">
+                <li class="footer__el">
+                    <ul class="footer__el--reseau">
+                        <li class="footer__el--reseauEl"><a href="https://www.instagram.com/guicab_dwt/"><img
+                                    src="assets/images/instagram.svg" alt="Logo d'Instagram"></a>
+                        </li>
+                        <li class="footer__el--reseauEl"><a href="mailto:guillaume.cabaraux@student.heaj.be"><img
+                                    src="assets/images/mail.svg" alt="Logo de mail"></a></li>
+                        <li class="footer__el--reseauEl"><a href="https://github.com/GuiCab04"><img
+                                    src="assets/images/github.svg" alt="Logo de Github"></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="footer__el">Mode de paiement</li>
+                <li class="footer__el">Livraison</li>
+            </ul>
+            <ul class="footer__list">
+                <li class="footer__el">Condition d'utilisation</li>
+                <li class="footer__el">Politique de confidentialité</li>
+                <li class="footer__el">Politique de remboursement</li>
+                <li class="footer__el"><a href="https://guillaume-cabaraux.be">Guillaume Cabaraux</a></li>
+            </ul>
+        </div>
+        <small class="footer__small">©2024 - <a href="#">Crédits</a></small>
+    </footer>
+
+</body>
+
+</html>
