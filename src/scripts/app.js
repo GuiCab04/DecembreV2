@@ -1,11 +1,15 @@
 "use strict";
 
+
+
 // IMPORT GSAP & SCROLLTRIGGER
 
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
+
+
 
 // BURGER MENU
 
@@ -63,13 +67,35 @@ menuLinks.forEach(link => {
     });
 });
 
-//Tomes Overlay Infini
+
+
+//STICKY NAV
+
+
+const headerSticky = document.querySelector('.header--sticky');
+if (headerSticky) {
+    headerSticky.classList.add('visible');
+
+    let lastScrollTop = 0;
+
+    window.addEventListener("scroll", function () {
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        if (currentScroll > lastScrollTop) {
+            headerSticky.classList.remove('visible');
+        } else {
+            headerSticky.classList.add('visible');
+        }
+        lastScrollTop = currentScroll;
+    });
+}
+
+
+
+//TOMES OVERLAY INFINI
 
 function initializeAnimation() {
     const container = document.querySelector('.tomes__img');
-    if (!container) {
-        return;
-    }
+    if (!container) return;
 
     const images = Array.from(container.children);
     const overlay = document.getElementById('overlay');
@@ -83,7 +109,7 @@ function initializeAnimation() {
 
     const animation = gsap.to(container, {
         x: -totalWidth,
-        duration: 25,
+        duration: 15,
         repeat: -1,
         ease: "linear",
         modifiers: {
@@ -99,7 +125,7 @@ function initializeAnimation() {
 
     function resumeAnimation() {
         console.log('Resuming animation');
-        animation.resume();
+        animation.play();
     }
 
     container.addEventListener('mouseenter', () => {
@@ -114,22 +140,33 @@ function initializeAnimation() {
         if (event.target.tagName === 'IMG') {
             overlayImg.src = event.target.src;
             overlay.style.display = 'flex';
+            gsap.fromTo(overlayImg,
+                { opacity: 0, scale: 0.8 },
+                { opacity: 1, scale: 1, duration: 0.5 }
+            );
             pauseAnimation();
         }
     });
 
     overlay.addEventListener('click', () => {
-        overlay.style.display = 'none';
-        overlayImg.src = '';
-        resumeAnimation();
+        gsap.to(overlayImg, {
+            opacity: 0,
+            scale: 0.8,
+            duration: 0.5,
+            onComplete: () => {
+                overlay.style.display = 'none';
+                overlayImg.src = '';
+                resumeAnimation();
+            }
+        });
     });
 }
 
 initializeAnimation();
 
 
-//COUNT 
 
+//COUNT 
 
 const quantitySelectBook = document.getElementById("quantity_book");
 const quantitySelectEbook = document.getElementById("quantity_ebook");
@@ -190,6 +227,8 @@ if (quantitySelectEbook) {
     quantitySelectEbook.addEventListener("input", updateTotals);
 }
 
+
+
 //LOAD DATA PRIX
 
 function loadCartData() {
@@ -226,6 +265,8 @@ function loadCartData() {
 }
 loadCartData();
 
+
+
 //SAVE DATA LIVRAISON
 
 function saveFormData() {
@@ -248,6 +289,7 @@ function saveFormData() {
         paysCadeau: document.getElementById('paysCadeau').value
     };
 
+    console.log('Données du formulaire sauvegardées:', formData);
     localStorage.setItem('formData', JSON.stringify(formData));
 }
 
@@ -256,6 +298,14 @@ function handleSubmit(event) {
     saveFormData();
     window.location.href = 'payement.html';
 }
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('.livraison__form');
+    if (form) {
+        form.addEventListener('submit', handleSubmit);
+    }
+});
+
+
 
 //CADEAU
 
@@ -281,53 +331,236 @@ if (cadeauCheckbox) {
 }
 
 
+
 //RADIO
 
 document.querySelectorAll('input[name="paymentMethod"]').forEach((elem) => {
     elem.addEventListener('change', function (e) {
         let creditParent = document.querySelector('.payement__creditParent');
         let debitParent = document.querySelector('.payement__debitParent');
-
-        // Sélectionnez tous les champs d'entrée à l'intérieur des fieldsets
         let creditInputs = creditParent.querySelectorAll('input');
         let debitInputs = debitParent.querySelectorAll('input');
 
         if (this.value === 'credit') {
-            // Afficher la section crédit et masquer la section débit
             creditParent.style.display = 'grid';
             debitParent.style.display = 'none';
-
-            // Rendre les champs de crédit requis
             creditInputs.forEach(input => input.setAttribute('required', 'required'));
-            // Retirer le statut requis des champs de débit
             debitInputs.forEach(input => input.removeAttribute('required'));
 
         } else if (this.value === 'debit') {
-            // Afficher la section débit et masquer la section crédit
             creditParent.style.display = 'none';
             debitParent.style.display = 'grid';
-
-            // Rendre les champs de débit requis
             debitInputs.forEach(input => input.setAttribute('required', 'required'));
-            // Retirer le statut requis des champs de crédit
             creditInputs.forEach(input => input.removeAttribute('required'));
 
         } else if (this.value === 'paypal') {
-            // Masquer les sections crédit et débit
             creditParent.style.display = 'none';
             debitParent.style.display = 'none';
-
-            // Retirer le statut requis des champs de crédit et de débit
             creditInputs.forEach(input => input.removeAttribute('required'));
             debitInputs.forEach(input => input.removeAttribute('required'));
         }
     });
 });
 
-// Initialisation de l'affichage
 let selectedPaymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
 if (selectedPaymentMethod) {
     selectedPaymentMethod.dispatchEvent(new Event('change'));
 }
 
 
+
+//REMERCIEMENT
+
+function displayFormData() {
+    const formData = JSON.parse(localStorage.getItem('formData'));
+
+    if (formData) {
+        // Facturation
+        const facturationNom = document.getElementById('facturationNom');
+        const facturationMail = document.getElementById('facturationMail');
+        const facturationTel = document.getElementById('facturationTel');
+        const facturationAdresse = document.getElementById('facturationAdresse');
+
+        if (facturationNom) {
+            facturationNom.textContent = `Prénom/Nom : ${formData.prenom} ${formData.nom}`;
+        }
+
+        if (facturationMail) {
+            facturationMail.textContent = `Email : ${formData.email}`;
+        }
+
+        if (facturationTel) {
+            facturationTel.textContent = `Téléphone : ${formData.telephone}`;
+        }
+
+        if (facturationAdresse) {
+            facturationAdresse.textContent = `Adresse : ${formData.adresse}, ${formData.codepostal}, ${formData.ville}, ${formData.pays}`;
+        }
+
+        // Livraison
+        const livraisonNom = document.getElementById('livraisonNom');
+        const livraisonMail = document.getElementById('livraisonMail');
+        const livraisonTel = document.getElementById('livraisonTel');
+        const livraisonAdresse = document.getElementById('livraisonAdresse');
+
+        if (livraisonNom) {
+            if (formData.prenomCadeau || formData.nomCadeau) {
+                livraisonNom.textContent = `Prénom/Nom : ${formData.prenomCadeau} ${formData.nomCadeau}`;
+            } else {
+                livraisonNom.textContent = `Prénom/Nom : ${formData.prenom} ${formData.nom}`;
+            }
+        }
+
+        if (livraisonMail) {
+            if (formData.emailCadeau) {
+                livraisonMail.textContent = `Email : ${formData.emailCadeau}`;
+            } else {
+                livraisonMail.textContent = `Email : ${formData.email}`;
+            }
+        }
+
+        if (livraisonTel) {
+            if (formData.telephoneCadeau) {
+                livraisonTel.textContent = `Téléphone : ${formData.telephoneCadeau}`;
+            } else {
+                livraisonTel.textContent = `Téléphone : ${formData.telephone}`;
+            }
+        }
+
+        if (livraisonAdresse) {
+            if (formData.adresseCadeau || formData.codepostalCadeau || formData.villeCadeau || formData.paysCadeau) {
+                livraisonAdresse.textContent = `Adresse : ${formData.adresseCadeau}, ${formData.codepostalCadeau}, ${formData.villeCadeau}, ${formData.paysCadeau}`;
+            } else {
+                livraisonAdresse.textContent = `Adresse : ${formData.adresse}, ${formData.codepostal}, ${formData.ville}, ${formData.pays}`;
+            }
+        }
+    }
+}
+
+displayFormData();
+
+
+
+// ACCUEIL GIF DESKTOP
+
+function adjustContentDimensions() {
+    const gifElement = document.querySelector('.accueil__gif');
+    const contentElement = document.querySelector('.accueil__content');
+
+    if (!gifElement || !contentElement) {
+        return;
+    }
+
+    const windowWidth = window.innerWidth;
+    const gifHeight = gifElement.offsetHeight;
+
+    if (windowWidth > 1200) {
+        contentElement.style.height = `${gifHeight}px`;
+        contentElement.style.maxHeight = `${gifHeight}px`;
+    } else {
+        contentElement.style.height = '';
+        contentElement.style.maxHeight = '';
+    }
+}
+
+const intervalId = setInterval(() => {
+    const gifElement = document.querySelector('.accueil__gif');
+    const contentElement = document.querySelector('.accueil__content');
+    if (gifElement && contentElement) {
+        adjustContentDimensions();
+        clearInterval(intervalId);
+    }
+}, 100);
+
+window.onresize = adjustContentDimensions;
+
+
+
+//LOADER
+
+document.body.classList.add('loading');
+
+let checkLoading = setInterval(function () {
+    if (document.readyState === 'complete') {
+        clearInterval(checkLoading);
+
+        if (!sessionStorage.getItem('reloaded')) {
+            sessionStorage.setItem('reloaded', 'true');
+            location.reload();
+        } else {
+            sessionStorage.removeItem('reloaded');
+            gsap.to('.loader__container', {
+                opacity: 0, duration: 1, ease: 'power2.inOut', onComplete: function () {
+                    document.body.classList.remove('loading');
+                    gsap.set('.loader__container', { display: 'none' });
+                }
+            });
+        }
+    }
+}, 100);
+
+
+
+// ETAT ACTIF
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav__el");
+
+function updateMenuActiveState(activeIndex) {
+    navLinks.forEach((item, index) => {
+        if (index === activeIndex) {
+            item.classList.add("nav__el--active");
+        } else {
+            item.classList.remove("nav__el--active");
+        }
+    });
+}
+
+sections.forEach((section, index) => {
+    const trigger = ScrollTrigger.create({
+        trigger: section,
+        start: "top top",
+        end: "bottom bottom",
+        onEnter: () => {
+            updateMenuActiveState(index - 1);
+        },
+        onLeaveBack: () => {
+            updateMenuActiveState(index - 2);
+        },
+    });
+
+    const resizeObserver = new ResizeObserver(() => {
+        trigger.refresh();
+    });
+    resizeObserver.observe(section);
+});
+
+
+
+//TRANSITION
+
+const linksTransition = document.querySelectorAll(".link-transition");
+linksTransition.forEach(link => {
+    link.addEventListener('click', event => {
+        event.preventDefault();
+        const targetUrl = link.getAttribute('href');
+
+        gsap.to('body', {
+            duration: 0.5,
+            opacity: 0,
+            onComplete: () => {
+                window.location.href = targetUrl;
+            }
+        });
+    });
+});
+
+function transitionPage() {
+    gsap.to('body', {
+        duration: 0.5,
+        opacity: 1,
+        delay: 0.5
+    });
+}
+
+transitionPage();

@@ -24,32 +24,21 @@
 
 <body>
 
-    <header>
+    <header class="header--sticky">
 
-        <div class="nav--mobile">
+        <nav class="nav--mobile">
             <a href="index.html"><img class="nav__logo" src="assets/images/logo.png"
-                    alt="Logo avec comme écriture 'Solo Leveling'"></a>
-            <button type="button" class="menu__nav--toggle" id="menuToggle">
-                <span class="menu__bar"></span>
-                <span class="menu__bar"></span>
-                <span class="menu__bar"></span>
-            </button>
-            <nav class="menu">
-                <ul class="menu__list" id="menuList">
-                    <li class="menu__el"><a href="#">Accueil</a></li>
-                    <li class="menu__el"><a href="#">Mon panier<img src="assets/images/panier.svg"
-                                alt="Icone qui représente un panier"></a></li>
-                </ul>
-            </nav>
-        </div>
+                    srcset="assets/images/logo@2x.png 2x" alt="Logo avec comme écriture 'Solo Leveling'"></a>
+            <ul class="nav__list">
+                <li class="nav__el menu__el--buttonCenter"><a class="link-transition" href="index.html">Accueil</a></li>
+            </ul>
+        </nav>
 
         <nav class="nav--desktop">
             <a href="index.html"><img class="nav__logo" src="assets/images/logo.png"
-                    alt="Logo avec comme écriture 'Solo Leveling'"></a>
+                    srcset="assets/images/logo@2x.png 2x" alt="Logo avec comme écriture 'Solo Leveling'"></a>
             <ul class="nav__list">
-                <li class="nav__el nav__el--button"><a href="index.html">Accueil</a></li>
-                <li class="nav__el nav__el--button"><a href="panier.html">Mon panier<img src="assets/images/panier.svg"
-                            alt="Icone qui représente un panier"></a></li>
+                <li class="nav__el nav__el--button"><a class="link-transition" href="index.html">Accueil</a></li>
             </ul>
         </nav>
     </header>
@@ -57,7 +46,7 @@
     <main>
         <section class="livraison">
             <h1 class="livraison__title">Livraison</h1>
-            <form class="livraison__form" action="payement.html" method="get" onsubmit="handleSubmit(event)">
+            <form class="livraison__form" action="payement.html" method="get">
                 <div>
                     <fieldset class="livraison__gridParent">
                         <div class="livraison__gridEl--1">
@@ -255,7 +244,7 @@
                 </div>
                 <div class="recap">
                     <div class="recap__content">
-                        <h3 class="recap__subtitle">Produit</h3>
+                        <h2 class="recap__subtitle">Produit</h2>
 
                         <p class="recap__paraNoItem" id="no-items-message">Aucun article n'est sélectionné.</p>
 
@@ -275,8 +264,8 @@
                             <li class="recap__el recap__el--big" id="recapValue__total">0.00€</li>
                         </ul>
                     </div>
-                    <div class="livraison__linkSubmit--center">
-                        <button class="livraison__linkSubmit" type="submit">Continuer la
+                    <div class="button__linkSubmit--center">
+                        <button class="button__linkSubmit button__linkSubmit--anim" type="submit">Continuer la
                             commande</button>
                     </div>
                 </div>
@@ -312,7 +301,8 @@
                 <li class="footer__el"><a href="https://guillaume-cabaraux.be">Guillaume Cabaraux</a></li>
             </ul>
         </div>
-        <small class="footer__small">©2024 - <a href="#">Crédits</a></small>
+        <small class="footer__small">©2024 - <a class="link-transition footer__credit"
+                href="credit.html">Crédits</a></small>
     </footer>
 
 </body>

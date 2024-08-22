@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Cabaraux Guillaume">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:site_name" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Solo Leveling | Remerciement">
+    <meta property="og:url" content="https://guillaume-cabaraux.be/projets/decembre">
+    <meta property="og:image" content="assets/images/logo.png">
+    <meta property="og:description" content="Solo Leveling | Remerciement">
+    <link rel="shortcut icon" href="assets/images/logo.png">
+    <link rel="stylesheet" href="styles/app.css">
+    <script src="scripts/app.js" defer></script>
+    <title>Solo Leveling | Remerciement</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Manrope:wght@200..800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header--sticky">
+
+        <nav class="nav--mobile">
+            <a href="index.html"><img class="nav__logo" src="assets/images/logo.png"
+                    srcset="assets/images/logo@2x.png 2x" alt="Logo avec comme écriture 'Solo Leveling'"></a>
+            <ul class="nav__list">
+                <li class="nav__el menu__el--buttonCenter"><a class="link-transition" href="index.html">Accueil</a></li>
+            </ul>
+        </nav>
+
+        <nav class="nav--desktop">
+            <a href="index.html"><img class="nav__logo" src="assets/images/logo.png"
+                    srcset="assets/images/logo@2x.png 2x" alt="Logo avec comme écriture 'Solo Leveling'"></a>
+            <ul class="nav__list">
+                <li class="nav__el nav__el--button"><a class="link-transition" href="index.html">Accueil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="remerciement">
+            <div class="remerciement__content">
+                <h1 class="remerciement__title">Confirmation de votre commande</h1>
+                <p class="remerciement__text">Nous vous remercions de votre commande.</p>
+                <p class="remerciement__text">Vous recevrez sous peu un mail de confirmation de votre commande.</p>
+                <img class="remerciement__img" src="assets/images/remerciement-solo-L.jpg"
+                    srcset="assets/images/remerciement-solo-L@2x.jpg 2x"
+                    alt="Illustration mettant en scène Sung Jinwoo avant et après son éveil sur des cadavre de monstre">
+                <h2 class="remerciement__subtitle">Informations</h2>
+                <h3 class="remerciement__h3">Adresse de facturation enregistrée</h3>
+                <ul class="remerciement__list">
+                    <li class="remerciement__el" id="facturationNom"></li>
+                    <li class="remerciement__el" id="facturationMail"></li>
+                    <li class="remerciement__el" id="facturationTel"></li>
+                    <li class="remerciement__el" id="facturationAdresse"></li>
+                </ul>
+                <h3 class="remerciement__h3">Adresse de livraison enregistrée</h3>
+                <ul class="remerciement__list">
+                    <li class="remerciement__el" id="livraisonNom"></li>
+                    <li class="remerciement__el" id="livraisonMail"></li>
+                    <li class="remerciement__el" id="livraisonTel"></li>
+                    <li class="remerciement__el" id="livraisonAdresse"></li>
+                </ul>
+            </div>
+            <div class="recap">
+                <div class="recap__content">
+                    <h3 class="recap__subtitle">Produit</h3>
+
+                    <p class="recap__paraNoItem" id="no-items-message">Aucun article n'est sélectionné.</p>
+
+                    <ul class="recap__list recap__list--book">
+                        <li class="recap__el">Solo Leveling - KBooks <br>
+                            Coffret complet (14 livres)</li>
+                        <li class="recap__el" id="recapValue__book">0.00€</li>
+                    </ul>
+                    <ul class="recap__list recap__list--ebook">
+                        <li class="recap__el">Solo Leveling - KBooks<br>
+                            Kindle (14 fichiers livres)</li>
+                        <li class="recap__el" id="recapValue__ebook">0.00€</li>
+                    </ul>
+
+                    <ul class="recap__list">
+                        <li class="recap__el recap__el--big">Total :</li>
+                        <li class="recap__el recap__el--big" id="recapValue__total">0.00€</li>
+                    </ul>
+                </div>
+                <ul class="recap__aList">
+                    <li class="recap__link"><a class="link-transition" href="index.html">Retour à l'accueil</a></li>
+                </ul>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <h2 class="footer__title">Infos pratiques</h2>
+        <div class="footer__content">
+            <ul class="footer__list">
+                <li class="footer__el">
+                    <ul class="footer__el--reseau">
+                        <li class="footer__el--reseauEl"><a href="https://www.instagram.com/guicab_dwt/"><img
+                                    src="assets/images/instagram.svg" alt="Logo d'Instagram"></a>
+                        </li>
+                        <li class="footer__el--reseauEl"><a href="mailto:guillaume.cabaraux@student.heaj.be"><img
+                                    src="assets/images/mail.svg" alt="Logo de mail"></a></li>
+                        <li class="footer__el--reseauEl"><a href="https://github.com/GuiCab04"><img
+                                    src="assets/images/github.svg" alt="Logo de Github"></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="footer__el">Mode de paiement</li>
+                <li class="footer__el">Livraison</li>
+            </ul>
+            <ul class="footer__list">
+                <li class="footer__el">Condition d'utilisation</li>
+                <li class="footer__el">Politique de confidentialité</li>
+                <li class="footer__el">Politique de remboursement</li>
+                <li class="footer__el"><a href="https://guillaume-cabaraux.be">Guillaume Cabaraux</a></li>
+            </ul>
+        </div>
+        <small class="footer__small">©2024 - <a class="link-transition footer__credit"
+                href="credit.html">Crédits</a></small>
+    </footer>
+
+</body>
+
+</html>

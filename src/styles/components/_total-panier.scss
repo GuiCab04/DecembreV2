@@ -2,7 +2,6 @@
     background: linear-gradient(rgba(0, 6, 22, 1) 0%, rgba(23, 19, 51, 1) 33%, rgba(23, 19, 51, 1) 66%, rgba(0, 6, 22, 1) 100%);
     padding: 84px 20px;
     padding-bottom: 0;
-    margin-top: 84px;
 
     &__title {
         font-family: "Libre Caslon Display", serif;
@@ -31,7 +30,7 @@
         font-size: 27px;
         color: #fff;
         margin: 0;
-        margin-top: 84px;
+        margin-top: 63px;
         margin-bottom: 47px;
     }
 
@@ -99,7 +98,7 @@
 @media (min-width:750px) {
     .panierTotal {
         background: linear-gradient(rgba(0, 6, 22, 1) 0%, rgba(23, 19, 51, 1) 33%, rgba(23, 19, 51, 1) 66%, rgba(0, 6, 22, 1) 100%);
-        padding: 93px 40px;
+        padding: 84px 40px;
         padding-bottom: 0;
         margin-top: 0px;
 
@@ -110,7 +109,6 @@
             font-size: 47px;
             color: #fff;
             margin: 0;
-            margin-bottom: 47px;
         }
 
         &__content {}
@@ -130,7 +128,7 @@
             font-size: 36px;
             color: #fff;
             margin: 0;
-            margin-top: 93px;
+            margin-top: 63px;
             margin-bottom: 63px;
         }
 
@@ -160,10 +158,9 @@
             margin-bottom: 20px;
 
             &--big {
-                font-size: 36px;
+                font-size: 27px;
                 margin-top: 36px;
             }
-
         }
 
         &__img {
@@ -194,10 +191,10 @@
     }
 }
 
-@media (min-width:1200px) {
+@media (min-width:1250px) {
     .panierTotal {
         background: linear-gradient(rgba(0, 6, 22, 1) 0%, rgba(23, 19, 51, 1) 33%, rgba(23, 19, 51, 1) 66%, rgba(0, 6, 22, 1) 100%);
-        padding: 93px 69px;
+        padding: 123px 69px;
         padding-bottom: 0;
         margin-top: 0px;
 
@@ -208,7 +205,7 @@
             font-size: 52px;
             color: #fff;
             margin: 0;
-            margin-bottom: 69px;
+            margin-bottom: 93px;
         }
 
         &__content {
@@ -229,10 +226,10 @@
             font-family: "Libre Caslon Display", serif;
             font-weight: 400;
             font-style: normal;
-            font-size: 52px;
+            font-size: 39px;
             color: #fff;
             margin: 0;
-            margin-top: 69px;
+            margin-top: 0px;
             margin-bottom: 69px;
         }
 
@@ -265,7 +262,6 @@
                 font-size: 39px;
                 margin-top: 39px;
             }
-
         }
 
         &__img {
@@ -287,10 +283,25 @@
             font-size: 29px;
             border: #fff 2px solid;
             padding: 15px 20px;
+            margin-top: 52px;
+            position: relative;
+            background-color: transparent;
+            transition: background-color 0.3s, color 0.3s;
 
             a {
                 color: #fff;
                 text-decoration: none;
+                display: block;
+                transition: color 0.3s;
+            }
+        }
+
+        &__link:hover {
+            background-color: #fff;
+
+            a {
+                color: #000616;
+                border-radius: 10px;
             }
         }
     }

@@ -1,0 +1,113 @@
+.credits {
+    margin-top: 67.6px;
+    padding: 0 20px;
+
+    &__title {
+        font-family: "Libre Caslon Display", serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 47px;
+        color: #fff;
+        margin: 0;
+        padding-top: 47px;
+    }
+
+    &__subtitle {
+        font-family: "Libre Caslon Display", serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 36px;
+        color: #fff;
+        margin: 0;
+        margin-bottom: 47px;
+        margin-top: 47px;
+    }
+
+    &__el {
+        font-family: "Manrope", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 20px;
+        color: #fff;
+        list-style: circle;
+        margin-bottom: 10px;
+
+        & a {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+}
+
+@media (min-width: 750px) {
+    .credits {
+        margin-top: 91.1px;
+        padding: 0 40px;
+
+        &__title {
+            font-family: "Libre Caslon Display", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 63px;
+            color: #fff;
+            margin: 0;
+            padding-top: 63px;
+
+        }
+
+        &__subtitle {
+            font-family: "Libre Caslon Display", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 47px;
+            color: #fff;
+            margin: 0;
+            margin-bottom: 63px;
+            margin-top: 63px;
+        }
+
+        &__list {
+            padding: 0px;
+        }
+
+        &__el {
+            font-size: 22px;
+            width: 70%;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .credits {
+        margin-top: 94.4px;
+        padding: 0 69px;
+
+        &__title {
+            font-family: "Libre Caslon Display", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 69px;
+            color: #fff;
+            margin: 0;
+            margin-top: 0px;
+            margin-bottom: 69px;
+        }
+
+        &__subtitle {
+            font-family: "Libre Caslon Display", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 52px;
+            color: #fff;
+            margin: 0;
+            margin-top: 69px;
+            margin-bottom: 69px;
+        }
+
+        &__el {
+            & a:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

@@ -21,8 +21,6 @@
     &__list {
         margin: 0;
         padding: 0;
-
-
     }
 
     &__el {
@@ -44,6 +42,11 @@
             padding: 0;
             justify-content: space-between;
             align-items: center;
+
+            li:hover img {
+                transform: scale(1.1);
+                transition: transform 0.3s ease;
+            }
         }
 
         &--reseauEl {
@@ -136,7 +139,7 @@
     }
 }
 
-@media (min-width:1200px) {
+@media (min-width:1250px) {
     .footer {
         padding-left: 69px;
         padding-right: 69px;
@@ -148,8 +151,12 @@
             font-size: 52px;
             color: #fff;
             margin: 0;
-            margin-top: 84px;
+            margin-top: 93px;
             margin-bottom: 69px;
+        }
+
+        &__credit:hover {
+            text-decoration: underline;
         }
 
         &__content {
@@ -165,7 +172,7 @@
         &__el {
             font-family: "Manrope", sans-serif;
             margin: 0;
-            font-size: 22px;
+            font-size: 17px;
             color: #fff;
             list-style: none;
             margin-bottom: 10px;

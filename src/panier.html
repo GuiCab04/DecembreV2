@@ -24,32 +24,21 @@
 
 <body>
 
-    <header>
+    <header class="header--sticky">
 
-        <div class="nav--mobile">
+        <nav class="nav--mobile">
             <a href="index.html"><img class="nav__logo" src="assets/images/logo.png"
-                    alt="Logo avec comme écriture 'Solo Leveling'"></a>
-            <button type="button" class="menu__nav--toggle" id="menuToggle">
-                <span class="menu__bar"></span>
-                <span class="menu__bar"></span>
-                <span class="menu__bar"></span>
-            </button>
-            <nav class="menu">
-                <ul class="menu__list" id="menuList">
-                    <li class="menu__el"><a href="#">Accueil</a></li>
-                    <li class="menu__el"><a href="#">Mon panier<img src="assets/images/panier.svg"
-                                alt="Icone qui représente un panier"></a></li>
-                </ul>
-            </nav>
-        </div>
+                    srcset="assets/images/logo@2x.png 2x" alt="Logo avec comme écriture 'Solo Leveling'"></a>
+            <ul class="nav__list">
+                <li class="nav__el menu__el--buttonCenter"><a class="link-transition" href="index.html">Accueil</a></li>
+            </ul>
+        </nav>
 
         <nav class="nav--desktop">
             <a href="index.html"><img class="nav__logo" src="assets/images/logo.png"
-                    alt="Logo avec comme écriture 'Solo Leveling'"></a>
+                    srcset="assets/images/logo@2x.png 2x" alt="Logo avec comme écriture 'Solo Leveling'"></a>
             <ul class="nav__list">
-                <li class="nav__el nav__el--button"><a href="annexe.html">Accueil</a></li>
-                <li class="nav__el nav__el--button"><a href="annexe.html">Mon panier<img src="assets/images/panier.svg"
-                            alt="Icone qui représente un panier"></a></li>
+                <li class="nav__el nav__el--button"><a class="link-transition" href="index.html">Accueil</a></li>
             </ul>
         </nav>
     </header>
@@ -60,7 +49,8 @@
             <h1 class="panier__title">Panier</h1>
             <div class="panier__content">
                 <div class="panier__contentBook">
-                    <img class="panier__img" src="assets/images/manga.png" alt="Couverture du Tome 1 de Solo Leveling">
+                    <img class="panier__img" src="assets/images/coffret_solo_leveling.png"
+                        srcset="assets/images/coffret_solo_leveling@2x.png 2x" alt="Coffret de Solo Leveling">
                     <ul class="panier__list">
                         <li class="panier__el">Solo Leveling - KBooks <br>
                             Coffret complet (14 livres)</li>
@@ -84,7 +74,8 @@
                     </ul>
                 </div>
                 <div class="panier__contentEbook">
-                    <img class="panier__img" src="assets/images/manga.png" alt="">
+                    <img class="panier__img" src="assets/images/kindle.png" srcset="assets/images/kindle@2x.png 2x"
+                        alt="Liseuse avec dessus Solo Leveling">
                     <ul class="panier__list">
                         <li class="panier__el">Solo Leveling - KBooks<br>
                             Kindle (14 fichiers livres)</li>
@@ -111,8 +102,8 @@
         </section>
 
         <section class="panierTotal">
-            <h2 class="panierTotal__title">Total panier</h2>
             <div class="panierTotal__content">
+                <h2 class="panierTotal__title">Total panier</h2>
                 <h3 class="panierTotal__subtitle">Produit</h3>
 
                 <p class="panierTotal__paraNoItem" id="no-items-message">Aucun article n'est sélectionné.</p>
@@ -134,10 +125,11 @@
                 </ul>
             </div>
             <ul class="panierTotal__listButton">
-                <li class="panierTotal__link"><a id="order-button" class="disabled" href="livraison.html">Commander</a>
+                <li class="panierTotal__link"><a class="link-transition" href="livraison.html">Commander</a>
                 </li>
             </ul>
             <img class="panierTotal__img" src="assets/images/panier-solo-L.png"
+                srcset="assets/images/panier-solo-L@2x.png 2x"
                 alt="Illustration du personnage principale de Solo Leveling">
 
         </section>
@@ -170,7 +162,8 @@
                 <li class="footer__el"><a href="https://guillaume-cabaraux.be">Guillaume Cabaraux</a></li>
             </ul>
         </div>
-        <small class="footer__small">©2024 - <a href="#">Crédits</a></small>
+        <small class="footer__small">©2024 - <a class="link-transition footer__credit"
+                href="credit.html">Crédits</a></small>
     </footer>
 
 </body>

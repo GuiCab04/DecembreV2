@@ -8,14 +8,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta property="og:site_name" content="">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Solo Leveling | Livraison">
+    <meta property="og:title" content="Solo Leveling | Payement">
     <meta property="og:url" content="https://guillaume-cabaraux.be/projets/decembre">
     <meta property="og:image" content="assets/images/logo.png">
-    <meta property="og:description" content="Solo Leveling | Livraison">
+    <meta property="og:description" content="Solo Leveling | Payement">
     <link rel="shortcut icon" href="assets/images/logo.png">
     <link rel="stylesheet" href="styles/app.css">
     <script src="scripts/app.js" defer></script>
-    <title>Solo Leveling | Livraison</title>
+    <title>Solo Leveling | Payement</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Manrope:wght@200..800&display=swap"
@@ -24,32 +24,21 @@
 
 <body>
 
-    <header>
+    <header class="header--sticky">
 
-        <div class="nav--mobile">
+        <nav class="nav--mobile">
             <a href="index.html"><img class="nav__logo" src="assets/images/logo.png"
-                    alt="Logo avec comme écriture 'Solo Leveling'"></a>
-            <button type="button" class="menu__nav--toggle" id="menuToggle">
-                <span class="menu__bar"></span>
-                <span class="menu__bar"></span>
-                <span class="menu__bar"></span>
-            </button>
-            <nav class="menu">
-                <ul class="menu__list" id="menuList">
-                    <li class="menu__el"><a href="#">Accueil</a></li>
-                    <li class="menu__el"><a href="#">Mon panier<img src="assets/images/panier.svg"
-                                alt="Icone qui représente un panier"></a></li>
-                </ul>
-            </nav>
-        </div>
+                    srcset="assets/images/logo@2x.png 2x" alt="Logo avec comme écriture 'Solo Leveling'"></a>
+            <ul class="nav__list">
+                <li class="nav__el menu__el--buttonCenter"><a class="link-transition" href="index.html">Accueil</a></li>
+            </ul>
+        </nav>
 
         <nav class="nav--desktop">
             <a href="index.html"><img class="nav__logo" src="assets/images/logo.png"
-                    alt="Logo avec comme écriture 'Solo Leveling'"></a>
+                    srcset="assets/images/logo@2x.png 2x" alt="Logo avec comme écriture 'Solo Leveling'"></a>
             <ul class="nav__list">
-                <li class="nav__el nav__el--button"><a href="index.html">Accueil</a></li>
-                <li class="nav__el nav__el--button"><a href="panier.html">Mon panier<img src="assets/images/panier.svg"
-                            alt="Icone qui représente un panier"></a></li>
+                <li class="nav__el nav__el--button"><a class="link-transition" href="index.html">Accueil</a></li>
             </ul>
         </nav>
     </header>
@@ -57,97 +46,125 @@
     <main>
         <section class="payement">
             <h1 class="payement__title">Payement</h1>
-            <form class="payement__form">
-                <div class="payement__method">
-                    <label class="payement__radioLabel">
-                        <input type="radio" name="paymentMethod" value="credit">Carte de
-                        crédit
-                        <img class="payement__radioImg" src="assets/images/mastercard.png" alt="Logo de mastercard">
-                        <img class="payement__radioImg" src="assets/images/visa.png" alt="Logo de visa">
-                    </label>
+            <form class="payement__form" action="remerciement.html" method="get">
+                <div class="payement__form--margin">
+                    <div class="payement__method">
+                        <label class="payement__radioLabel">
+                            <input type="radio" name="paymentMethod" value="credit" required>Carte de
+                            crédit
+                            <img class="payement__radioImg" src="assets/images/mastercard.png"
+                                srcset="assets/images/mastercard@2x.png 2x" alt="Logo de mastercard">
+                            <img class="payement__radioImg" src="assets/images/visa.png"
+                                srcset="assets/images/visa@2x.png 2x" alt="Logo de visa">
+                        </label>
 
-                    <fieldset class="payement__creditParent">
-                        <div class="payement__creditEl--1">
-                            <label class="payement__gridLabel" for="creditCarte">Numéro de carte</label>
-                            <input class="payement__gridInput" type="text" id="creditCarte" name="creditCarte"
-                                title="Entrez votre numéro de carte" placeholder="BE01 2345 6789 0123">
-                        </div>
-                        <div class="payement__creditEl--2">
-                            <label class="payement__gridLabel" for="creditExpiration">Expiration</label>
-                            <input class="payement__gridInput" type="text" id="creditExpiration" name="creditExpiration"
-                                title="Entrez la date d'expiration de votre carte" placeholder="XX/XX">
-                        </div>
-                        <div class="payement__creditEl--3">
-                            <label class="payement__gridLabel" for="creditCvv">CVV</label>
-                            <input class="payement__gridInput" type="text" id="creditCvv" name="creditCvv"
-                                title="Entrez le numéro CVV de votre carte" placeholder="123">
-                        </div>
-                        <div class="payement__creditEl--4">
-                            <label class="payement__gridLabel" for="creditTitulaire">Titulaire</label>
-                            <input class="payement__gridInput" type="text" id="creditTitulaire" name="creditTitulaire"
-                                title="Entrez le nom titulaire de la carte" placeholder="Prénom Nom">
-                        </div>
-                    </fieldset>
+                        <fieldset class="payement__creditParent">
+                            <div class="payement__creditEl--1">
+                                <label class="payement__gridLabel" for="creditCarte">Numéro de carte</label>
+                                <input class="payement__gridInput" type="text" id="creditCarte" name="creditCarte"
+                                    title="Entrez votre numéro de carte" placeholder="BE01 2345 6789 0123">
+                            </div>
+                            <div class="payement__creditEl--2">
+                                <label class="payement__gridLabel" for="creditExpiration">Expiration</label>
+                                <input class="payement__gridInput" type="text" id="creditExpiration"
+                                    name="creditExpiration" title="Entrez la date d'expiration de votre carte"
+                                    placeholder="XX/XX">
+                            </div>
+                            <div class="payement__creditEl--3">
+                                <label class="payement__gridLabel" for="creditCvv">CVV</label>
+                                <input class="payement__gridInput" type="text" id="creditCvv" name="creditCvv"
+                                    title="Entrez le numéro CVV de votre carte" placeholder="123">
+                            </div>
+                            <div class="payement__creditEl--4">
+                                <label class="payement__gridLabel" for="creditTitulaire">Titulaire</label>
+                                <input class="payement__gridInput" type="text" id="creditTitulaire"
+                                    name="creditTitulaire" title="Entrez le nom titulaire de la carte"
+                                    placeholder="Prénom Nom">
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="payement__method">
+                        <label class="payement__radioLabel">
+                            <input type="radio" name="paymentMethod" value="debit" required>
+                            Carte de débit
+                            <img class="payement__radioImg" src="assets/images/bancontact.png"
+                                srcset="assets/images/bancontact@2x.png 2x" alt="Logo de bancontact">
+                            <img class="payement__radioImg" src="assets/images/maestro.png"
+                                srcset="assets/images/maestro@2x.png 2x" alt="Logo de maestro">
+                        </label>
+
+                        <fieldset class="payement__debitParent">
+                            <div class="payement__debitEl--1">
+                                <label class="payement__gridLabel" for="debitCarte">Numéro de carte</label>
+                                <input class="payement__gridInput" type="text" id="debitCarte" name="debitCarte"
+                                    title="Entrez votre numéro de carte" placeholder="BE01 2345 6789 0123">
+                            </div>
+                            <div class="payement__debitEl--2">
+                                <label class="payement__gridLabel" for="debitExpiration">Expiration</label>
+                                <input class="payement__gridInput" type="text" id="debitExpiration"
+                                    name="debitExpiration" title="Entrez la date d'expiration de votre carte"
+                                    placeholder="XX/XX">
+                            </div>
+                            <div class="payement__debitEl--3">
+                                <label class="payement__gridLabel" for="debitTitulaire">Titulaire</label>
+                                <input class="payement__gridInput" type="text" id="debitTitulaire" name="debitTitulaire"
+                                    title="Entrez le nom titulaire de la carte" placeholder="Prénom Nom">
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="payement__method">
+                        <label class="payement__radioLabel">
+                            <input type="radio" name="paymentMethod" value="paypal" required>
+                            Paypal
+                            <img class="payement__radioImg" src="assets/images/paypal.png"
+                                srcset="assets/images/paypal@2x.png 2x" alt="Logo de paypal">
+                        </label>
+                    </div>
                 </div>
-                <div class="payement__method">
-                    <label class="payement__radioLabel">
-                        <input type="radio" name="paymentMethod" value="debit">
-                        Carte de débit
-                        <img class="payement__radioImg" src="assets/images/bancontact.png" alt="Logo de bancontact">
-                        <img class="payement__radioImg" src="assets/images/maestro.png" alt="Logo de maestro">
-                    </label>
+                <div class="recap">
+                    <div class="recap__content">
+                        <h2 class="recap__subtitle">Produit</h2>
 
-                    <fieldset class="payement__debitParent">
-                        <div class="payement__debitEl--1">
-                            <label class="payement__gridLabel" for="debitCarte">Numéro de carte</label>
-                            <input class="payement__gridInput" type="text" id="debitCarte" name="debitCarte"
-                                title="Entrez votre numéro de carte" placeholder="BE01 2345 6789 0123">
-                        </div>
-                        <div class="payement__debitEl--2">
-                            <label class="payement__gridLabel" for="debitExpiration">Expiration</label>
-                            <input class="payement__gridInput" type="text" id="debitExpiration" name="debitExpiration"
-                                title="Entrez la date d'expiration de votre carte" placeholder="XX/XX">
-                        </div>
-                        <div class="payement__debitEl--3">
-                            <label class="payement__gridLabel" for="debitTitulaire">Titulaire</label>
-                            <input class="payement__gridInput" type="text" id="debitTitulaire" name="debitTitulaire"
-                                title="Entrez le nom titulaire de la carte" placeholder="Prénom Nom">
-                        </div>
-                    </fieldset>
+                        <p class="recap__paraNoItem" id="no-items-message">Aucun article n'est sélectionné.</p>
+
+                        <ul class="recap__list recap__list--book">
+                            <li class="recap__el">Solo Leveling - KBooks <br>
+                                Coffret complet (14 livres)</li>
+                            <li class="recap__el" id="recapValue__book">0.00€</li>
+                        </ul>
+                        <ul class="recap__list recap__list--ebook">
+                            <li class="recap__el">Solo Leveling - KBooks<br>
+                                Kindle (14 fichiers livres)</li>
+                            <li class="recap__el" id="recapValue__ebook">0.00€</li>
+                        </ul>
+
+                        <ul class="recap__list">
+                            <li class="recap__el recap__el--big">Total :</li>
+                            <li class="recap__el recap__el--big" id="recapValue__total">0.00€</li>
+                        </ul>
+                    </div>
+                    <ul class="recap__conditionsList">
+                        <li class="recap__conditionsEl">
+                            <input class="recap__conditionsInput" type="checkbox" id="conditionsVente" required>
+                            <label class="recap__conditionsLabel" for="conditionsVente">Accepter les <span
+                                    class="recap__conditionsLabel--underline">conditions
+                                    générales de
+                                    vente.</span></label>
+                        </li>
+                        <li class="recap__conditionsEl">
+                            <input class="recap__conditionsInput" type="checkbox" id="conditionsGenerales" required>
+                            <label class="recap__conditionsLabel" for="conditionsGenerales">Accepter les
+                                <span class="recap__conditionsLabel--underline">conditions
+                                    générales</span> de Solo Leveling.</label>
+                        </li>
+                    </ul>
+
+                    <div class="button__linkSubmit--center">
+                        <button class="button__linkSubmit" type="submit">Confirmer le payement</button>
+                    </div>
                 </div>
-                <div class="payement__method">
-                    <label class="payement__radioLabel">
-                        <input type="radio" name="paymentMethod" value="paypal">
-                        Paypal
-                        <img class="payement__radioImg" src="assets/images/paypal.png" alt="Logo de paypal">
-                    </label>
-                </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-                <!-- Submit button -->
-                <button type="submit">Envoyer</button>
             </form>
         </section>
-
-
-
-
-
-
-
-
-
     </main>
 
     <footer class="footer">
@@ -176,7 +193,8 @@
                 <li class="footer__el"><a href="https://guillaume-cabaraux.be">Guillaume Cabaraux</a></li>
             </ul>
         </div>
-        <small class="footer__small">©2024 - <a href="#">Crédits</a></small>
+        <small class="footer__small">©2024 - <a class="link-transition footer__credit"
+                href="credit.html">Crédits</a></small>
     </footer>
 
 </body>

@@ -22,9 +22,9 @@
     rel="stylesheet">
 </head>
 
-<body>
+<body class="body">
 
-  <header>
+  <header class="header--sticky">
 
     <div class="nav--mobile">
       <a href="#"><img class="nav__logo" src="assets/images/logo.png" srcset="assets/images/logo@2x.png 2x"
@@ -40,39 +40,39 @@
           <li class="menu__el"><a href="#tomes">Tomes</a></li>
           <li class="menu__el"><a href="#commander">Commander</a></li>
           <li class="menu__el"><a href="#contact">Contact</a></li>
-          <li class="menu__el"><a href="panier.html">Mon panier<img src="assets/images/panier.svg"
-                alt="Icone qui représente un panier"></a></li>
+          <li class="menu__el menu__el--button"><a class="link-transition" href="panier.html">Mon panier<img
+                src="assets/images/panier.svg" alt="Icone qui représente un panier"></a></li>
         </ul>
       </nav>
     </div>
 
     <nav class="nav--desktop">
-      <a href="#"><img class="nav__logo" src="assets/images/logo.png"
+      <a href="#"><img class="nav__logo" src="assets/images/logo.png" srcset="assets/images/logo@2x.png 2x"
           alt="Logo avec comme écriture 'Solo Leveling'"></a>
       <ul class="nav__list">
         <li class="nav__el"><a href="#description">Description</a></li>
         <li class="nav__el"><a href="#tomes">Tomes</a></li>
-        <li class="nav__el nav__el--button"><a href="#commander">Commander</a></li>
+        <li class="nav__el"><a href="#commander">Commander</a></li>
         <li class="nav__el"><a href="#contact">Contact</a></li>
-        <li class="nav__el nav__el--button"><a href="panier.html">Mon panier<img src="assets/images/panier.svg"
-              alt="Icone qui représente un panier"></a></li>
+        <li class="nav__el nav__el--button"><a class="link-transition" href="panier.html">Mon panier<img
+              src="assets/images/panier.svg" alt="Icone qui représente un panier"></a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-
     <section class="accueil" id="accueil">
-      <video class="accueil__gif" src="assets/videos/GIF.mp4" autoplay loop></video>
+      <video class="accueil__gif" src="assets/videos/GIF.mp4" loop muted autoplay></video>
       <div class="accueil__content">
-        <h1 class="accueil__content--h1">Solo Leveling</h1>
-        <p class="accueil__content--p">Disponible en version papier et numérique.</p>
-        <ul class="accueil__content--list">
-          <li class="accueil__content--link"><a href="panier.html">Acheter maintenant</a></li>
+        <h1 class="accueil__h1">Solo Leveling</h1>
+        <p class="accueil__p">Disponible en version papier et numérique.</p>
+        <ul class="accueil__list">
+          <li class="accueil__link accueil__link--anim"><a class="link-transition" href="panier.html">Acheter
+              maintenant</a>
+          </li>
         </ul>
       </div>
     </section>
-
     <section class="description" id="description">
       <div class="description__text">
         <h2 class="description__text--title">Description</h2>
@@ -125,7 +125,8 @@
     <section class="coffret" id="commander">
       <h2 class="coffret__title">Solo Leveling</h2>
       <div class="coffret__content">
-        <img class="coffret__content--img" src="assets/images/coffret_solo_leveling.png" alt="Coffret de Solo Leveling">
+        <img class="coffret__content--img" src="assets/images/coffret_solo_leveling.png"
+          srcset="assets/images/coffret_solo_leveling@2x.png 2x" alt="Coffret de Solo Leveling">
         <div class="coffret__content--text">
           <p class="coffret__p">Solo Leveling est maintenant disponible version manga papier ou numérique. Vous pouvez
             dès
@@ -134,12 +135,14 @@
             commander dans le format que vous préférez.</p>
           <p class="coffret__p coffret__p--weight">Offrez-le en cadeau, et bénéficiez d’un coffret collector du manga.
           </p>
-          <ul class="coffret__list">
-            <li class="coffret__list--link"><a href="panier.html">Commandez maintenant</a></li>
+          <ul class="a__list">
+            <li class="a__link a__link--anim"><a class="link-transition" href="panier.html">Commandez maintenant</a>
+            </li>
           </ul>
         </div>
       </div>
     </section>
+
   </main>
 
   <footer class="footer" id="contact">
@@ -168,8 +171,16 @@
         <li class="footer__el"><a href="https://guillaume-cabaraux.be">Guillaume Cabaraux</a></li>
       </ul>
     </div>
-    <small class="footer__small">©2024 - <a href="#">Crédits</a></small>
+    <small class="footer__small">©2024 - <a class="link-transition footer__credit"
+        href="credit.html">Crédits</a></small>
   </footer>
+  <div class="loader__container">
+    <div class="loader__content">
+      <svg class="loader__circle" viewBox="25 25 50 50">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+      </svg>
+    </div>
+  </div>
 
 </body>
 

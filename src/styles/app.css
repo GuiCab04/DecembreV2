@@ -26,6 +26,34 @@ header {
   display: none;
 }
 
+.nav__el {
+  display: table-cell;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+.nav__el:hover {
+  transform: scale(1.1);
+}
+.nav__el a:after {
+  bottom: -3px;
+  content: "";
+  height: 1px;
+  left: 50%;
+  border-radius: 5px;
+  position: absolute;
+  background: #fff;
+  transition: width 0.4s ease 0s, left 0.4s ease 0s;
+  width: 0;
+}
+.nav__el a:hover:after {
+  width: 100%;
+  left: 0;
+}
+.nav__el--active a:after {
+  width: 100%;
+  left: 0;
+}
+
 .menu {
   position: fixed;
   top: 0;
@@ -73,6 +101,11 @@ header {
   color: #fff;
   padding: 46.5px;
   letter-spacing: 5px;
+}
+.menu__el--button {
+  border: solid 2px #fff;
+  padding: 11px 15px;
+  margin-top: 46.5px;
 }
 .menu__el img {
   padding-left: 7px;
@@ -248,9 +281,13 @@ html.menu--open {
     align-items: center;
     margin-left: 69px;
   }
+  .nav__el--button {
+    border: solid 2px #fff;
+    padding: 11px 15px;
+  }
   .nav__el img {
     padding-left: 7px;
-    width: 22px;
+    width: 20px;
   }
   .nav__el a {
     color: #fff;
@@ -274,6 +311,119 @@ main {
   padding: 0;
 }
 
+.button__linkSubmit {
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  border: #fff 1px solid;
+  padding: 11px 15px;
+  margin: 0 auto;
+  margin-top: 47px;
+  background-color: #000616;
+  color: #fff;
+  box-sizing: border-box;
+}
+.button__linkSubmit--center {
+  display: flex;
+  justify-content: center;
+}
+
+.a__list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.a__list__link {
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  border: #fff 1px solid;
+  padding: 11px 15px;
+  margin: 0 auto;
+}
+.a__list__link a {
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (min-width: 750px) {
+  .button__linkSubmit {
+    font-size: 27px;
+    border: #fff 2px solid;
+    padding: 15px 20px;
+    background-color: #000616;
+    color: #fff;
+  }
+  .a__link {
+    font-size: 27px;
+    border: #fff 2px solid;
+    padding: 15px 20px;
+  }
+}
+@media (min-width: 1200px) {
+  .button__linkSubmit {
+    font-size: 29px;
+    border: #fff 2px solid;
+    padding: 15px 20px;
+    background-color: rgb(24, 19, 58);
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 0;
+  }
+  .a__list {
+    display: flex;
+    justify-content: center;
+  }
+  .a__link {
+    border: #fff 2px solid;
+    border-radius: 5px;
+    color: white;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding-bottom: 12px;
+    overflow: hidden;
+    margin-bottom: 47px;
+  }
+  .a__link--anim {
+    padding: 15px 20px 19px 20px;
+    font-family: "Manrope", sans-serif;
+    background: transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    font-size: 22px;
+  }
+  .a__link:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: rgb(255, 255, 255);
+    transition: all 0.3s ease;
+  }
+  .a__link:hover:after {
+    top: auto;
+    bottom: 0;
+    height: 100%;
+  }
+  .a__link a {
+    padding: 10px 25px;
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .a__link:hover a {
+    color: black;
+  }
+  .a a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
 .footer {
   padding-left: 20px;
   padding-right: 20px;
@@ -290,18 +440,16 @@ main {
 }
 .footer__content {
   display: flex;
+  justify-content: space-around;
 }
 .footer__list {
   margin: 0;
   padding: 0;
 }
-.footer__list :nth-child(2) {
-  margin-right: 27px;
-}
 .footer__el {
   font-family: "Manrope", sans-serif;
   margin: 0;
-  font-size: 15px;
+  font-size: 13px;
   color: #fff;
   list-style: none;
   margin-bottom: 7px;
@@ -314,10 +462,16 @@ main {
   display: flex;
   margin: 0;
   padding: 0;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__el--reseau li:hover img {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
 .footer__el--reseauEl {
   list-style: none;
-  margin-right: 20px;
+  margin: 0;
 }
 .footer__small {
   font-family: "Manrope", sans-serif;
@@ -326,10 +480,129 @@ main {
   color: #fff;
   display: flex;
   justify-content: center;
-  margin-top: 22px;
-  margin-bottom: 22px;
+  margin-top: 27px;
+  margin-bottom: 20px;
+}
+.footer__small a {
+  color: #fff;
+  text-decoration: none;
 }
 
+@media (min-width: 750px) {
+  .footer {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .footer__title {
+    font-family: "Libre Caslon Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 47px;
+    color: #fff;
+    margin: 0;
+    margin-top: 84px;
+    margin-bottom: 47px;
+  }
+  .footer__content {
+    display: flex;
+    justify-content: space-around;
+  }
+  .footer__list {
+    margin: 0;
+    padding: 0;
+  }
+  .footer__el {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 17px;
+    color: #fff;
+    list-style: none;
+    margin-bottom: 10px;
+  }
+  .footer__el a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .footer__el--reseau {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+  }
+  .footer__el--reseauEl {
+    list-style: none;
+    margin: 0;
+  }
+  .footer__small {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 14px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin-top: 36px;
+    margin-bottom: 27px;
+  }
+}
+@media (min-width: 1200px) {
+  .footer {
+    padding-left: 69px;
+    padding-right: 69px;
+  }
+  .footer__title {
+    font-family: "Libre Caslon Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 52px;
+    color: #fff;
+    margin: 0;
+    margin-top: 84px;
+    margin-bottom: 69px;
+  }
+  .footer__content {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer__list {
+    margin: 0;
+    padding: 0;
+  }
+  .footer__el {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 17px;
+    color: #fff;
+    list-style: none;
+    margin-bottom: 10px;
+  }
+  .footer__el a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .footer__el--reseau {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    margin-right: 29px;
+  }
+  .footer__el--reseauEl {
+    list-style: none;
+    margin: 0;
+  }
+  .footer__el--reseauEl img {
+    width: 29px;
+  }
+  .footer__small {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 17px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin-top: 39px;
+    margin-bottom: 29px;
+  }
+}
 .tomes {
   overflow: hidden;
   white-space: nowrap;
@@ -394,7 +667,7 @@ main {
   .tomes__title {
     font-size: 52px;
     margin: 0;
-    margin-bottom: 39px;
+    margin-bottom: 69px;
     padding-left: 69px;
   }
   .tomes__img img {
@@ -428,7 +701,6 @@ main {
   width: 80vw;
   display: flex;
   margin: 0 auto;
-  margin-bottom: 84px;
 }
 
 @media (min-width: 750px) {
@@ -472,7 +744,7 @@ main {
   .description__text--title {
     font-size: 52px;
     margin: 0;
-    margin-bottom: 39px;
+    margin-bottom: 69px;
   }
   .description__text--p {
     font-size: 22px;
@@ -497,7 +769,7 @@ main {
   padding-left: 20px;
   padding-right: 20px;
 }
-.accueil__content--h1 {
+.accueil__h1 {
   font-family: "Libre Caslon Display", serif;
   font-weight: 400;
   font-style: normal;
@@ -507,27 +779,27 @@ main {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.accueil__content--p {
+.accueil__p {
   font-family: "Manrope", sans-serif;
   margin: 0;
   font-size: 20px;
   color: #fff;
   margin-bottom: 63px;
 }
-.accueil__content--list {
+.accueil__list {
   display: flex;
   padding: 0;
   margin: 0;
   list-style: none;
 }
-.accueil__content--link {
+.accueil__link {
   font-family: "Manrope", sans-serif;
   font-size: 20px;
   border: #fff 1px solid;
   padding: 11px 15px;
   margin: 0 auto;
 }
-.accueil__content--link a {
+.accueil__link a {
   color: #fff;
   text-decoration: none;
 }
@@ -537,19 +809,19 @@ main {
     padding-left: 40px;
     padding-right: 40px;
   }
-  .accueil__content--h1 {
+  .accueil__h1 {
     font-size: 63px;
     margin-top: 27px;
     margin-bottom: 27px;
   }
-  .accueil__content--p {
+  .accueil__p {
     font-size: 27px;
     margin-bottom: 84px;
   }
-  .accueil__content--link {
+  .accueil__link {
     font-size: 27px;
     border: #fff 2px solid;
-    padding: 15px 20px;
+    padding: 15px 20px 19px 20px;
   }
 }
 @media (min-width: 1200px) {
@@ -558,14 +830,13 @@ main {
     justify-content: end;
   }
   .accueil__gif {
-    height: 100vh;
+    width: 100vw;
     position: absolute;
   }
   .accueil__content {
     position: relative;
     justify-content: center;
     width: 70vh;
-    height: 100vh;
     border-top-left-radius: 10000px;
     border-bottom-left-radius: 10000px;
     background: rgba(0, 6, 22, 0.7);
@@ -575,23 +846,69 @@ main {
     padding-left: 69px;
     padding-right: 69px;
   }
-  .accueil__content--h1 {
-    font-size: 69px;
+  .accueil__h1 {
     margin-top: 45%;
+    font-size: 84px;
     margin-bottom: 12px;
     margin-left: 69px;
   }
-  .accueil__content--p {
+  .accueil__p {
     font-size: 22px;
     margin-bottom: 69px;
     margin-left: 69px;
   }
-  .accueil__content--link {
-    font-size: 29px;
-    border: #fff 2px solid;
-    padding: 15px 20px;
+  .accueil__link {
+    display: block;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    color: white;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding-bottom: 12px;
+    overflow: hidden;
     margin: 0;
+    margin-bottom: 47px;
     margin-left: 69px;
+  }
+  .accueil__link--anim {
+    padding: 15px 20px 19px 20px;
+    font-family: "Manrope", sans-serif;
+    background: transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    font-size: 36px;
+  }
+  .accueil__link:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: rgb(255, 255, 255);
+    transition: all 0.3s ease;
+  }
+  .accueil__link:hover:after {
+    top: auto;
+    bottom: 0;
+    height: 100%;
+  }
+  .accueil__link a {
+    padding: 10px 25px;
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .accueil__link:hover a {
+    color: black;
+  }
+  .accueil a {
+    color: #fff;
+    text-decoration: none;
   }
 }
 .coffret {
@@ -623,23 +940,6 @@ main {
 }
 .coffret__p--weight {
   font-weight: 800;
-}
-.coffret__list {
-  display: flex;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-.coffret__list--link {
-  font-family: "Manrope", sans-serif;
-  font-size: 20px;
-  border: #fff 1px solid;
-  padding: 11px 15px;
-  margin: 0 auto;
-}
-.coffret__list--link a {
-  color: #fff;
-  text-decoration: none;
 }
 
 @media (min-width: 750px) {
@@ -674,21 +974,6 @@ main {
   .coffret__p--weight {
     font-weight: 800;
   }
-  .coffret__list {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-  .coffret__list--link {
-    font-size: 27px;
-    border: #fff 2px solid;
-    padding: 15px 20px;
-  }
-  .coffret__list--link a {
-    color: #fff;
-    text-decoration: none;
-  }
 }
 @media (min-width: 1200px) {
   .coffret {
@@ -698,7 +983,7 @@ main {
   .coffret__title {
     font-size: 52px;
     margin: 0;
-    margin-bottom: 39px;
+    margin-bottom: 69px;
     margin-top: 93px;
   }
   .coffret__content {
@@ -722,21 +1007,1613 @@ main {
   .coffret__p--weight {
     font-weight: 800;
   }
-  .coffret__list {
+}
+.panier {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.panier__title {
+  font-family: "Libre Caslon Display", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 47px;
+  color: #fff;
+  margin: 0;
+  margin-top: 47px;
+  margin-bottom: 47px;
+}
+.panier__contentBook {
+  margin-bottom: 84px;
+}
+.panier__quantity {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.panier__contentEbook {
+  border-top: solid 2px #fff;
+}
+.panier__img {
+  width: 40vw;
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 47px;
+  margin-top: 84px;
+}
+.panier__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.panier__el {
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+  font-size: 17px;
+  color: #fff;
+  margin-bottom: 7px;
+}
+.panier__count {
+  background: #000616;
+  color: #fff;
+  padding: 3px;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 750px) {
+  .panier {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .panier__title {
+    font-family: "Libre Caslon Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 63px;
+    color: #fff;
+    margin: 0;
+    margin-top: 63px;
+    margin-bottom: 63px;
+  }
+  .panier__contentBook {
+    margin-bottom: 93px;
+  }
+  .panier__quantity {
     display: flex;
     padding: 0;
     margin: 0;
     list-style: none;
-    justify-content: center;
   }
-  .coffret__list--link {
+  .panier__content {
+    display: flex;
+    justify-content: space-around;
+  }
+  .panier__contentEbook {
+    border-top: solid 0px #fff;
+  }
+  .panier__img {
+    width: 25vw;
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 63px;
+    margin-top: 93px;
+  }
+  .panier__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .panier__el {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 7px;
+  }
+  .panier__count {
+    background: #000616;
+    color: #fff;
+    font-size: 15px;
+    padding: 5px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+  }
+}
+@media (min-width: 1200px) {
+  .panier {
+    padding-left: 69px;
+    padding-right: 69px;
+  }
+  .panier__title {
+    font-size: 52px;
+    margin: 0;
+    margin-bottom: 69px;
+    margin-top: 93px;
+  }
+  .panier__contentBook {
+    margin-bottom: 93px;
+  }
+  .panier__img {
+    width: 15vw;
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 69px;
+    margin-top: 0px;
+  }
+  .panier__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .panier__el {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
     font-size: 22px;
+    color: #fff;
+    margin-bottom: 9px;
+  }
+  .panier__count {
+    background: #000616;
+    color: #fff;
+    font-size: 17px;
+    padding: 7px;
+    margin-left: 22px;
+    display: flex;
+    align-items: center;
+  }
+}
+.panierTotal {
+  background: linear-gradient(rgb(0, 6, 22) 0%, rgb(23, 19, 51) 33%, rgb(23, 19, 51) 66%, rgb(0, 6, 22) 100%);
+  padding: 84px 20px;
+  padding-bottom: 0;
+  margin-top: 84px;
+}
+.panierTotal__title {
+  font-family: "Libre Caslon Display", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 36px;
+  color: #fff;
+  margin: 0;
+  margin-bottom: 47px;
+}
+.panierTotal__paraNoItem {
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+  font-size: 17px;
+  color: #fff;
+  margin-bottom: 17px;
+}
+.panierTotal__subtitle {
+  font-family: "Libre Caslon Display", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 27px;
+  color: #fff;
+  margin: 0;
+  margin-top: 84px;
+  margin-bottom: 47px;
+}
+.panierTotal__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+.panierTotal__list--book {
+  display: none;
+}
+.panierTotal__list--ebook {
+  display: none;
+}
+.panierTotal__el {
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+  font-size: 17px;
+  color: #fff;
+  margin-bottom: 17px;
+}
+.panierTotal__el--big {
+  font-size: 27px;
+  margin-top: 27px;
+}
+.panierTotal__img {
+  margin-top: 63px;
+  width: 100%;
+  padding: 0;
+}
+.panierTotal__listButton {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.panierTotal__link {
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  border: #fff 1px solid;
+  padding: 11px 15px;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 47px;
+}
+.panierTotal__link a {
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (min-width: 750px) {
+  .panierTotal {
+    background: linear-gradient(rgb(0, 6, 22) 0%, rgb(23, 19, 51) 33%, rgb(23, 19, 51) 66%, rgb(0, 6, 22) 100%);
+    padding: 93px 40px;
+    padding-bottom: 0;
+    margin-top: 0px;
+  }
+  .panierTotal__title {
+    font-family: "Libre Caslon Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 47px;
+    color: #fff;
+    margin: 0;
+    margin-bottom: 47px;
+  }
+  .panierTotal__paraNoItem {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .panierTotal__subtitle {
+    font-family: "Libre Caslon Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 36px;
+    color: #fff;
+    margin: 0;
+    margin-top: 93px;
+    margin-bottom: 63px;
+  }
+  .panierTotal__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  .panierTotal__list--book {
+    display: none;
+  }
+  .panierTotal__list--ebook {
+    display: none;
+  }
+  .panierTotal__el {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .panierTotal__el--big {
+    font-size: 36px;
+    margin-top: 36px;
+  }
+  .panierTotal__img {
+    width: 80%;
+    padding: 0;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 84px;
+  }
+  .panierTotal__listButton {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .panierTotal__link {
+    font-size: 27px;
     border: #fff 2px solid;
     padding: 15px 20px;
-    margin: 0;
   }
-  .coffret__list--link a {
+  .panierTotal__link a {
     color: #fff;
     text-decoration: none;
+  }
+}
+@media (min-width: 1200px) {
+  .panierTotal {
+    background: linear-gradient(rgb(0, 6, 22) 0%, rgb(23, 19, 51) 33%, rgb(23, 19, 51) 66%, rgb(0, 6, 22) 100%);
+    padding: 93px 69px;
+    padding-bottom: 0;
+    margin-top: 0px;
+  }
+  .panierTotal__title {
+    font-family: "Libre Caslon Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 52px;
+    color: #fff;
+    margin: 0;
+    margin-bottom: 69px;
+  }
+  .panierTotal__content {
+    max-width: 70%;
+    display: grid;
+    margin: 0 auto;
+  }
+  .panierTotal__paraNoItem {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 22px;
+  }
+  .panierTotal__subtitle {
+    font-family: "Libre Caslon Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 52px;
+    color: #fff;
+    margin: 0;
+    margin-top: 69px;
+    margin-bottom: 69px;
+  }
+  .panierTotal__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  .panierTotal__list--book {
+    display: none;
+  }
+  .panierTotal__list--ebook {
+    display: none;
+  }
+  .panierTotal__el {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 22px;
+  }
+  .panierTotal__el--big {
+    font-size: 39px;
+    margin-top: 39px;
+  }
+  .panierTotal__img {
+    width: 50%;
+    padding: 0;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 93px;
+  }
+  .panierTotal__listButton {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .panierTotal__link {
+    font-size: 29px;
+    border: #fff 2px solid;
+    padding: 15px 20px;
+  }
+  .panierTotal__link a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+.livraison {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.livraison__title {
+  font-family: "Libre Caslon Display", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 47px;
+  color: #fff;
+  margin: 0;
+  margin-top: 47px;
+  margin-bottom: 47px;
+}
+.livraison__gridParent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  border: 0;
+  padding: 0;
+}
+.livraison__gridLabel {
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+  font-size: 15px;
+  color: #ffffff;
+  margin-bottom: 11px;
+}
+.livraison__gridInput {
+  padding: 8px;
+  font-size: 1em;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #ffffff;
+  border-radius: 2px;
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+  color: #ffffff;
+}
+.livraison__gridInput option {
+  background-color: #000616;
+  font-family: "Manrope", sans-serif;
+  color: #ffffff;
+}
+.livraison__gridEl--1 {
+  grid-area: 1/1/2/3;
+}
+.livraison__gridEl--2 {
+  grid-area: 1/3/2/5;
+}
+.livraison__gridEl--3 {
+  grid-area: 2/1/3/5;
+}
+.livraison__gridEl--4 {
+  grid-area: 3/1/4/5;
+}
+.livraison__gridEl--5 {
+  grid-area: 4/1/5/3;
+}
+.livraison__gridEl--6 {
+  grid-area: 4/3/5/5;
+}
+.livraison__gridEl--7 {
+  grid-area: 5/1/6/3;
+}
+.livraison__gridEl--8 {
+  grid-area: 5/3/6/5;
+}
+.livraison__gridParent div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.livraison__gridLabel {
+  margin-bottom: 5px;
+}
+
+@media (min-width: 750px) {
+  .livraison {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .livraison__title {
+    font-family: "Libre Caslon Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 63px;
+    color: #fff;
+    margin: 0;
+    margin-top: 63px;
+    margin-bottom: 63px;
+  }
+  .livraison__gridParent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+  }
+  .livraison__gridLabel {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+  .livraison__gridInput {
+    padding: 11px;
+    font-size: 1em;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #ffffff;
+    border-radius: 2px;
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    color: #ffffff;
+  }
+  .livraison__gridInput option {
+    background-color: #000616;
+    font-family: "Manrope", sans-serif;
+    color: #ffffff;
+  }
+  .livraison__gridEl--1 {
+    grid-area: 1/1/2/3;
+  }
+  .livraison__gridEl--2 {
+    grid-area: 1/3/2/5;
+  }
+  .livraison__gridEl--3 {
+    grid-area: 2/1/3/5;
+  }
+  .livraison__gridEl--4 {
+    grid-area: 3/1/4/5;
+  }
+  .livraison__gridEl--5 {
+    grid-area: 4/1/5/3;
+  }
+  .livraison__gridEl--6 {
+    grid-area: 4/3/5/5;
+  }
+  .livraison__gridEl--7 {
+    grid-area: 5/1/6/3;
+  }
+  .livraison__gridEl--8 {
+    grid-area: 5/3/6/5;
+  }
+  .livraison__gridParent div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .livraison__gridLabel {
+    margin-bottom: 7px;
+  }
+}
+@media (min-width: 1200px) {
+  .livraison {
+    padding-left: 69px;
+    padding-right: 69px;
+  }
+  .livraison__title {
+    font-family: "Libre Caslon Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 69px;
+    color: #fff;
+    margin: 0;
+    margin-bottom: 69px;
+    margin-top: 69px;
+  }
+  .livraison__form {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+  }
+  .livraison__gridParent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 29px;
+    grid-row-gap: 29px;
+  }
+  .livraison__gridLabel {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 22px;
+    color: #ffffff;
+    margin-bottom: 17px;
+  }
+  .livraison__gridInput {
+    padding: 11px;
+    font-size: 1em;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #ffffff;
+    border-radius: 2px;
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    color: #ffffff;
+  }
+  .livraison__gridInput option {
+    background-color: #000616;
+    font-family: "Manrope", sans-serif;
+    color: #ffffff;
+  }
+  .livraison__gridEl--1 {
+    grid-area: 1/1/2/3;
+  }
+  .livraison__gridEl--2 {
+    grid-area: 1/3/2/5;
+  }
+  .livraison__gridEl--3 {
+    grid-area: 2/1/3/5;
+  }
+  .livraison__gridEl--4 {
+    grid-area: 3/1/4/5;
+  }
+  .livraison__gridEl--5 {
+    grid-area: 4/1/5/3;
+  }
+  .livraison__gridEl--6 {
+    grid-area: 4/3/5/5;
+  }
+  .livraison__gridEl--7 {
+    grid-area: 5/1/6/3;
+  }
+  .livraison__gridEl--8 {
+    grid-area: 5/3/6/5;
+  }
+  .livraison__gridParent div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .livraison__gridLabel {
+    margin-bottom: 7px;
+  }
+}
+.recap {
+  border-top: solid 2px #fff;
+  margin-top: 63px;
+  padding: 63px 0px;
+  padding-bottom: 0;
+  margin-top: 63px;
+}
+.recap .a__list {
+  margin-top: 36px;
+}
+.recap__paraNoItem {
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+  font-size: 17px;
+  color: #fff;
+  margin-bottom: 17px;
+}
+.recap__subtitle {
+  font-family: "Libre Caslon Display", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 36px;
+  color: #fff;
+  margin: 0;
+  margin-bottom: 47px;
+}
+.recap__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+.recap__conditionsList {
+  list-style: none;
+  padding: 0;
+  margin-top: 36px;
+}
+.recap__conditionsList :nth-child(2) {
+  margin-top: 15px;
+}
+.recap__el {
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+  font-size: 17px;
+  color: #fff;
+  margin-bottom: 17px;
+}
+.recap__el--big {
+  font-size: 27px;
+  margin-top: 27px;
+}
+.recap__img {
+  margin-top: 63px;
+  width: 100%;
+  padding: 0;
+}
+.recap__listButton {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.recap__link {
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  border: #fff 1px solid;
+  padding: 11px 15px;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 47px;
+}
+.recap__link a {
+  color: #fff;
+  text-decoration: none;
+}
+.recap__conditionsLabel {
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+  font-size: 17px;
+  color: #ffffff;
+  margin-bottom: 11px;
+}
+.recap__conditionsLabel--underline {
+  text-decoration: underline;
+}
+
+@media (min-width: 750px) {
+  .recap {
+    padding: 84px 0px;
+    padding-bottom: 0;
+    margin-top: 84px;
+  }
+  .recap__paraNoItem {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .recap__subtitle {
+    font-family: "Libre Caslon Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 47px;
+    color: #fff;
+    margin: 0;
+    margin-bottom: 63px;
+  }
+  .recap__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  .recap__el {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .recap__el--big {
+    font-size: 36px;
+    margin-top: 36px;
+  }
+  .recap__img {
+    width: 80%;
+    padding: 0;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 84px;
+  }
+  .recap__listButton {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .recap__link {
+    font-size: 27px;
+    border: #fff 2px solid;
+    padding: 15px 20px;
+  }
+  .recap__link a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .recap__conditionsLabel {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 11px;
+  }
+  .recap__conditionsList {
+    margin-top: 47px;
+    margin-bottom: 20px;
+  }
+  .recap__conditionsList :nth-child(2) {
+    margin-top: 15px;
+  }
+}
+@media (min-width: 1200px) {
+  .recap {
+    border-top: solid 0px #fff;
+    padding: 0px 0px;
+    padding-bottom: 0;
+    margin-top: 0px;
+    width: 35%;
+    background-color: rgb(24, 19, 58);
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 52px;
+  }
+  .recap__paraNoItem {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 22px;
+  }
+  .recap__subtitle {
+    font-family: "Libre Caslon Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 52px;
+    color: #fff;
+    margin: 0;
+    margin-top: 0px;
+    margin-bottom: 69px;
+  }
+  .recap__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  .recap__el {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 22px;
+  }
+  .recap__el--big {
+    font-size: 39px;
+    margin-top: 39px;
+    margin-bottom: 0;
+  }
+  .recap__img {
+    width: 50%;
+    padding: 0;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 93px;
+  }
+  .recap__listButton {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .recap__link {
+    font-size: 29px;
+    border: #fff 2px solid;
+    padding: 15px 20px;
+    display: flex;
+    margin: 0 auto;
+  }
+  .recap__link a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .recap__conditionsInput {
+    width: 15px;
+    height: 15px;
+  }
+  .recap__conditionsLabel {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 11px;
+  }
+  .recap__conditionsList {
+    margin-top: 69px;
+  }
+  .recap__conditionsList :nth-child(2) {
+    margin-top: 17px;
+  }
+}
+.cadeau__checkbox {
+  margin-top: 63px;
+}
+.cadeau__checkboxLabel {
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+  font-size: 17px;
+  color: #ffffff;
+  margin-bottom: 11px;
+}
+.cadeau__gridParent {
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  border: 0;
+  padding: 0;
+  margin-top: 36px;
+}
+.cadeau__gridLabel {
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+  font-size: 15px;
+  color: #ffffff;
+  margin-bottom: 11px;
+}
+.cadeau__gridInput {
+  padding: 8px;
+  font-size: 1em;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+  color: #ffffff;
+}
+.cadeau__gridInput option {
+  background-color: #000616;
+  font-family: "Manrope", sans-serif;
+  color: #ffffff;
+}
+.cadeau__gridEl--1 {
+  grid-area: 1/1/2/3;
+}
+.cadeau__gridEl--2 {
+  grid-area: 1/3/2/5;
+}
+.cadeau__gridEl--3 {
+  grid-area: 2/1/3/5;
+}
+.cadeau__gridEl--4 {
+  grid-area: 3/1/4/5;
+}
+.cadeau__gridEl--5 {
+  grid-area: 4/1/5/3;
+}
+.cadeau__gridEl--6 {
+  grid-area: 4/3/5/5;
+}
+.cadeau__gridEl--7 {
+  grid-area: 5/1/6/3;
+}
+.cadeau__gridEl--8 {
+  grid-area: 5/3/6/5;
+}
+.cadeau__gridParent div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cadeau__gridLabel {
+  margin-bottom: 5px;
+}
+
+@media (min-width: 750px) {
+  .cadeau__checkbox {
+    margin-top: 63px;
+  }
+  .cadeau__checkboxLabel {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 11px;
+  }
+  .cadeau__gridParent {
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+    margin-top: 36px;
+  }
+  .cadeau__gridLabel {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+  .cadeau__gridInput {
+    padding: 11px;
+    font-size: 1em;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #ffffff;
+    border-radius: 2px;
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    color: #ffffff;
+  }
+  .cadeau__gridInput option {
+    background-color: #000616;
+    font-family: "Manrope", sans-serif;
+    color: #ffffff;
+  }
+  .cadeau__gridEl--1 {
+    grid-area: 1/1/2/3;
+  }
+  .cadeau__gridEl--2 {
+    grid-area: 1/3/2/5;
+  }
+  .cadeau__gridEl--3 {
+    grid-area: 2/1/3/5;
+  }
+  .cadeau__gridEl--4 {
+    grid-area: 3/1/4/5;
+  }
+  .cadeau__gridEl--5 {
+    grid-area: 4/1/5/3;
+  }
+  .cadeau__gridEl--6 {
+    grid-area: 4/3/5/5;
+  }
+  .cadeau__gridEl--7 {
+    grid-area: 5/1/6/3;
+  }
+  .cadeau__gridEl--8 {
+    grid-area: 5/3/6/5;
+  }
+  .cadeau__gridParent div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .cadeau__gridLabel {
+    margin-bottom: 7px;
+  }
+}
+@media (min-width: 1200px) {
+  .cadeau__checkbox {
+    margin-top: 63px;
+  }
+  .cadeau__checkboxInput {
+    width: 15px;
+    height: 15px;
+  }
+  .cadeau__checkboxLabel {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 22px;
+    color: #ffffff;
+    margin-bottom: 11px;
+  }
+  .cadeau__content {
+    display: none;
+  }
+  .cadeau__gridParent {
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+    margin-top: 36px;
+  }
+  .cadeau__gridLabel {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+  .cadeau__gridInput {
+    padding: 11px;
+    font-size: 1em;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #ffffff;
+    border-radius: 2px;
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    color: #ffffff;
+  }
+  .cadeau__gridInput option {
+    background-color: #000616;
+    font-family: "Manrope", sans-serif;
+    color: #ffffff;
+  }
+  .cadeau__gridEl--1 {
+    grid-area: 1/1/2/3;
+  }
+  .cadeau__gridEl--2 {
+    grid-area: 1/3/2/5;
+  }
+  .cadeau__gridEl--3 {
+    grid-area: 2/1/3/5;
+  }
+  .cadeau__gridEl--4 {
+    grid-area: 3/1/4/5;
+  }
+  .cadeau__gridEl--5 {
+    grid-area: 4/1/5/3;
+  }
+  .cadeau__gridEl--6 {
+    grid-area: 4/3/5/5;
+  }
+  .cadeau__gridEl--7 {
+    grid-area: 5/1/6/3;
+  }
+  .cadeau__gridEl--8 {
+    grid-area: 5/3/6/5;
+  }
+  .cadeau__gridParent div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .cadeau__gridLabel {
+    margin-bottom: 7px;
+  }
+}
+.payement {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.payement__title {
+  font-family: "Libre Caslon Display", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 47px;
+  color: #fff;
+  margin: 0;
+  margin-top: 47px;
+  margin-bottom: 47px;
+}
+.payement__method {
+  margin-bottom: 36px;
+}
+.payement__form--margin {
+  margin-bottom: 63px;
+}
+.payement__creditParent {
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  border: 0;
+  padding: 0;
+  margin-top: 20px;
+}
+.payement__gridLabel {
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+  font-size: 15px;
+  color: #ffffff;
+  margin-bottom: 11px;
+}
+.payement__gridInput {
+  padding: 8px;
+  font-size: 1em;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #ffffff;
+  border-radius: 2px;
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+  color: #ffffff;
+}
+.payement__creditEl--1 {
+  grid-area: 1/1/2/5;
+}
+.payement__creditEl--2 {
+  grid-area: 2/1/3/3;
+}
+.payement__creditEl--3 {
+  grid-area: 2/3/3/5;
+}
+.payement__creditEl--4 {
+  grid-area: 3/1/4/5;
+}
+.payement__creditParent div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.payement__debitParent {
+  display: none;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  border: 0;
+  padding: 0;
+  margin-top: 20px;
+}
+.payement__debitParent div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.payement__debitEl--1 {
+  grid-area: 1/1/2/5;
+}
+.payement__debitEl--2 {
+  grid-area: 2/1/3/2;
+}
+.payement__debitEl--3 {
+  grid-area: 3/1/4/2;
+}
+.payement__radioLabel {
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+  font-size: 15px;
+  color: #ffffff;
+  margin-bottom: 11px;
+  display: flex;
+  align-items: center;
+}
+.payement__radioLabel input {
+  margin-right: 11px;
+  width: 20px;
+  height: 20px;
+}
+.payement__radioImg {
+  height: 17px;
+  margin-left: 9px;
+}
+
+@media (min-width: 750px) {
+  .payement {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .payement__title {
+    font-family: "Libre Caslon Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 63px;
+    color: #fff;
+    margin: 0;
+    margin-top: 63px;
+    margin-bottom: 63px;
+  }
+  .payement__form--margin {
+    margin-bottom: 84px;
+  }
+  .payement__method {
+    margin-bottom: 47px;
+  }
+  .payement__creditParent {
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+    border: 0;
+    padding: 0;
+    margin-top: 40px;
+  }
+  .payement__gridLabel {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 11px;
+  }
+  .payement__gridInput {
+    padding: 11px;
+    font-size: 1em;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #ffffff;
+    border-radius: 2px;
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    color: #ffffff;
+  }
+  .payement__creditEl--1 {
+    grid-area: 1/1/2/5;
+  }
+  .payement__creditEl--2 {
+    grid-area: 2/1/3/3;
+  }
+  .payement__creditEl--3 {
+    grid-area: 2/3/3/5;
+  }
+  .payement__creditEl--4 {
+    grid-area: 3/1/4/5;
+  }
+  .payement__creditParent div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .payement__debitParent {
+    display: none;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+    border: 0;
+    padding: 0;
+    margin-top: 40px;
+  }
+  .payement__debitParent div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .payement__debitEl--1 {
+    grid-area: 1/1/2/5;
+  }
+  .payement__debitEl--2 {
+    grid-area: 2/1/3/2;
+  }
+  .payement__debitEl--3 {
+    grid-area: 3/1/4/2;
+  }
+  .payement__radioLabel {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+  .payement__radioLabel input {
+    margin-right: 15px;
+    width: 27px;
+    height: 27px;
+  }
+  .payement__radioImg {
+    height: 20px;
+    margin-left: 13px;
+  }
+}
+@media (min-width: 1200px) {
+  .payement {
+    padding-left: 69px;
+    padding-right: 69px;
+  }
+  .payement__title {
+    font-family: "Libre Caslon Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 69px;
+    color: #fff;
+    margin: 0;
+    margin-top: 69px;
+    margin-bottom: 69px;
+  }
+  .payement__method {
+    margin-bottom: 47px;
+  }
+  .payement__form {
+    display: flex;
+    justify-content: space-around;
+  }
+  .payement__form--margin {
+    margin-bottom: 0px;
+  }
+  .payement__creditParent {
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 29px;
+    grid-row-gap: 29px;
+    border: 0;
+    padding: 0;
+    margin-top: 39px;
+  }
+  .payement__gridLabel {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 22px;
+    color: #ffffff;
+    margin-bottom: 17px;
+  }
+  .payement__gridInput {
+    padding: 11px;
+    font-size: 1em;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #ffffff;
+    border-radius: 2px;
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    color: #ffffff;
+  }
+  .payement__creditEl--1 {
+    grid-area: 1/1/2/5;
+  }
+  .payement__creditEl--2 {
+    grid-area: 2/1/3/3;
+  }
+  .payement__creditEl--3 {
+    grid-area: 2/3/3/5;
+  }
+  .payement__creditEl--4 {
+    grid-area: 3/1/4/5;
+  }
+  .payement__creditParent div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .payement__debitParent {
+    display: none;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 29px;
+    grid-row-gap: 29px;
+    border: 0;
+    padding: 0;
+    margin-top: 39px;
+  }
+  .payement__debitParent div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .payement__debitEl--1 {
+    grid-area: 1/1/2/5;
+  }
+  .payement__debitEl--2 {
+    grid-area: 2/1/3/2;
+  }
+  .payement__debitEl--3 {
+    grid-area: 3/1/4/2;
+  }
+  .payement__radioLabel {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 22px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+  .payement__radioLabel input {
+    margin-right: 20px;
+    width: 29px;
+    height: 29px;
+  }
+  .payement__radioImg {
+    height: 22px;
+    margin-left: 17px;
+  }
+}
+.remerciement {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.remerciement__title {
+  font-family: "Libre Caslon Display", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 47px;
+  color: #fff;
+  margin: 0;
+  margin-top: 47px;
+  margin-bottom: 47px;
+}
+.remerciement__subtitle {
+  font-family: "Libre Caslon Display", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 36px;
+  color: #fff;
+  margin: 0;
+  margin-top: 47px;
+  margin-bottom: 36px;
+}
+.remerciement__h3 {
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+  font-size: 20px;
+  color: #fff;
+}
+.remerciement__text {
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+  font-size: 17px;
+  color: #fff;
+  margin-bottom: 7px;
+}
+.remerciement__list {
+  padding: 0;
+  list-style: none;
+  margin-top: 27px;
+  margin-bottom: 27px;
+}
+.remerciement__el {
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+  font-size: 13px;
+  color: #fff;
+  margin-bottom: 7px;
+}
+
+@media (min-width: 750px) {
+  .remerciement {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .remerciement__title {
+    font-family: "Libre Caslon Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 47px;
+    color: #fff;
+    margin: 0;
+    margin-bottom: 47px;
+    margin-top: 84px;
+  }
+  .remerciement__subtitle {
+    font-family: "Libre Caslon Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 36px;
+    color: #fff;
+    margin: 0;
+    margin-top: 93px;
+    margin-bottom: 63px;
+  }
+  .remerciement__h3 {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 22px;
+    color: #fff;
+  }
+  .remerciement__text {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .remerciement__list {
+    padding: 0;
+    list-style: none;
+    margin-top: 27px;
+    margin-bottom: 27px;
+  }
+  .remerciement__el {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 17px;
+    color: #fff;
+    margin-bottom: 7px;
+  }
+}
+@media (min-width: 1200px) {
+  .remerciement {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 69px;
+    padding-right: 69px;
+  }
+  .remerciement__title {
+    font-family: "Libre Caslon Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 52px;
+    color: #fff;
+    margin: 0;
+    margin-top: 69px;
+    margin-bottom: 69px;
+  }
+  .remerciement__subtitle {
+    font-family: "Libre Caslon Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 52px;
+    color: #fff;
+    margin: 0;
+    margin-top: 69px;
+    margin-bottom: 69px;
+  }
+  .remerciement__h3 {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 29px;
+    color: #fff;
+  }
+  .remerciement__text {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 17px;
+  }
+  .remerciement__list {
+    padding: 0;
+    list-style: none;
+    margin-top: 29px;
+    margin-bottom: 29px;
+  }
+  .remerciement__el {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 7px;
   }
 }/*# sourceMappingURL=app.css.map */

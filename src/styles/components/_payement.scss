@@ -1,6 +1,8 @@
 .payement {
+    margin-top: 67.6px;
     padding-left: 20px;
     padding-right: 20px;
+
 
     &__title {
         font-family: "Libre Caslon Display", serif;
@@ -9,14 +11,19 @@
         font-size: 47px;
         color: #fff;
         margin: 0;
-        margin-top: 47px;
-        margin-bottom: 47px;
+        padding-top: 47px;
+        margin-bottom: 63px;
     }
 
     &__method {
         margin-bottom: 36px;
     }
 
+    &__form {
+        &--margin {
+            margin-bottom: 63px;
+        }
+    }
 
     &__creditParent {
         display: none;
@@ -129,6 +136,7 @@
 
 @media (min-width:750px) {
     .payement {
+        margin-top: 91.1px;
         padding-left: 40px;
         padding-right: 40px;
 
@@ -139,8 +147,14 @@
             font-size: 63px;
             color: #fff;
             margin: 0;
-            margin-top: 63px;
+            padding-top: 63px;
             margin-bottom: 63px;
+        }
+
+        &__form {
+            &--margin {
+                margin-bottom: 84px;
+            }
         }
 
         &__method {
@@ -254,6 +268,146 @@
         &__radioImg {
             height: 20px;
             margin-left: 13px;
+        }
+    }
+}
+
+@media (min-width:1250px) {
+    .payement {
+        margin-top: 94.4px;
+        padding-left: 69px;
+        padding-right: 69px;
+
+        &__title {
+            font-family: "Libre Caslon Display", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 69px;
+            color: #fff;
+            margin: 0;
+            margin-top: 0px;
+            margin-bottom: 69px;
+        }
+
+        &__method {
+            margin-bottom: 47px;
+        }
+
+        &__form {
+            display: flex;
+            justify-content: space-around;
+
+            &--margin {
+                margin-bottom: 0px;
+            }
+        }
+
+        &__creditParent {
+            display: none;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-column-gap: 29px;
+            grid-row-gap: 29px;
+            border: 0;
+            padding: 0;
+            margin-top: 39px;
+        }
+
+        &__gridLabel {
+            font-family: "Manrope", sans-serif;
+            margin: 0;
+            font-size: 22px;
+            color: #ffffff;
+            margin-bottom: 17px;
+        }
+
+        &__gridInput {
+            padding: 11px;
+            font-size: 1em;
+            background-color: rgba(0, 0, 0, 0);
+            border: 1px solid #ffffff;
+            border-radius: 2px;
+            font-family: "Manrope", sans-serif;
+            margin: 0;
+            color: #ffffff;
+        }
+
+
+        &__creditEl {
+            &--1 {
+                grid-area: 1 / 1 / 2 / 5;
+            }
+
+            &--2 {
+                grid-area: 2 / 1 / 3 / 3;
+            }
+
+            &--3 {
+                grid-area: 2 / 3 / 3 / 5;
+            }
+
+            &--4 {
+                grid-area: 3 / 1 / 4 / 5;
+            }
+        }
+
+        &__creditParent div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        &__debitParent {
+            display: none;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            grid-column-gap: 29px;
+            grid-row-gap: 29px;
+            border: 0;
+            padding: 0;
+            margin-top: 39px;
+        }
+
+        &__debitParent div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        &__debitEl {
+            &--1 {
+                grid-area: 1 / 1 / 2 / 5;
+            }
+
+            &--2 {
+                grid-area: 2 / 1 / 3 / 2;
+            }
+
+            &--3 {
+                grid-area: 3 / 1 / 4 / 2;
+            }
+        }
+
+        &__radioLabel {
+            font-family: "Manrope", sans-serif;
+            margin: 0;
+            font-size: 22px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+
+            input {
+                margin-right: 20px;
+                width: 29px;
+                height: 29px;
+            }
+
+        }
+
+        &__radioImg {
+            height: 22px;
+            margin-left: 17px;
         }
     }
 }

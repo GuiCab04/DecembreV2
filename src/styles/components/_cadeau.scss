@@ -191,10 +191,11 @@
     }
 }
 
-@media (min-width:1200px) {
+@media (min-width:1250px) {
     .cadeau {
         &__checkbox {
-            margin-top: 63px;
+            margin-top: 69px;
+            box-sizing: border-box;
         }
 
         &__checkboxInput {
@@ -205,7 +206,7 @@
         &__checkboxLabel {
             font-family: "Manrope", sans-serif;
             margin: 0;
-            font-size: 20px;
+            font-size: 22px;
             color: #ffffff;
             margin-bottom: 11px;
         }
@@ -222,13 +223,13 @@
             grid-template-rows: repeat(5, 1fr);
             grid-column-gap: 40px;
             grid-row-gap: 40px;
-            margin-top: 36px;
+            margin-top: 39px;
         }
 
         &__gridLabel {
             font-family: "Manrope", sans-serif;
             margin: 0;
-            font-size: 20px;
+            font-size: 22px;
             color: #ffffff;
             margin-bottom: 15px;
         }
