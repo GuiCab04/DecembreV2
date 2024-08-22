@@ -14,8 +14,6 @@
         margin-bottom: 47px;
     }
 
-    &__form {}
-
     &__gridParent {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -111,8 +109,6 @@
             padding-top: 63px;
             margin-bottom: 63px;
         }
-
-        &__form {}
 
         &__gridParent {
             display: grid;

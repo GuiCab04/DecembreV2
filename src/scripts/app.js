@@ -479,22 +479,29 @@ window.onresize = adjustContentDimensions;
 //LOADER
 
 document.body.classList.add('loading');
-
 let checkLoading = setInterval(function () {
     if (document.readyState === 'complete') {
         clearInterval(checkLoading);
+        const loaderContainer = document.querySelector('.loader__container');
 
-        if (!sessionStorage.getItem('reloaded')) {
-            sessionStorage.setItem('reloaded', 'true');
-            location.reload();
+        if (loaderContainer) {
+            if (!sessionStorage.getItem('reloaded')) {
+                sessionStorage.setItem('reloaded', 'true');
+                location.reload();
+            } else {
+                sessionStorage.removeItem('reloaded');
+                gsap.to(loaderContainer, {
+                    opacity: 0,
+                    duration: 1,
+                    ease: 'power2.inOut',
+                    onComplete: function () {
+                        document.body.classList.remove('loading');
+                        gsap.set(loaderContainer, { display: 'none' });
+                    }
+                });
+            }
         } else {
-            sessionStorage.removeItem('reloaded');
-            gsap.to('.loader__container', {
-                opacity: 0, duration: 1, ease: 'power2.inOut', onComplete: function () {
-                    document.body.classList.remove('loading');
-                    gsap.set('.loader__container', { display: 'none' });
-                }
-            });
+            document.body.classList.remove('loading');
         }
     }
 }, 100);

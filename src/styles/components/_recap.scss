@@ -3,7 +3,7 @@
     margin-top: 63px;
     padding-top: 63px;
 
-    &__content {}
+
 
     &__paraNoItem {
         font-family: "Manrope", sans-serif;
@@ -30,12 +30,6 @@
         list-style: none;
         display: flex;
         justify-content: space-between;
-
-
-
-        &--book {}
-
-        &--ebook {}
     }
 
     &__conditionsList {
@@ -47,8 +41,6 @@
             margin-top: 15px;
         }
     }
-
-    &__conditionsEl {}
 
     &__el {
         font-family: "Manrope", sans-serif;
@@ -99,8 +91,6 @@
         }
     }
 
-    &__conditionsInput {}
-
     &__conditionsLabel {
         font-family: "Manrope", sans-serif;
         margin: 0;
@@ -119,8 +109,6 @@
         padding: 84px 0px;
         padding-bottom: 0;
         margin-top: 84px;
-
-        &__content {}
 
         &__paraNoItem {
             font-family: "Manrope", sans-serif;
@@ -146,12 +134,6 @@
             list-style: none;
             display: flex;
             justify-content: space-between;
-
-
-
-            &--book {}
-
-            &--ebook {}
         }
 
         &__el {
@@ -194,8 +176,6 @@
             }
         }
 
-        &__conditionsInput {}
-
         &__conditionsLabel {
             font-family: "Manrope", sans-serif;
             margin: 0;
@@ -226,8 +206,6 @@
         height: fit-content;
         padding: 52px;
 
-        &__content {}
-
         &__paraNoItem {
             font-family: "Manrope", sans-serif;
             margin: 0;
@@ -253,12 +231,6 @@
             list-style: none;
             display: flex;
             justify-content: space-between;
-
-
-
-            &--book {}
-
-            &--ebook {}
         }
 
         &__el {
@@ -346,6 +318,4 @@
             }
         }
     }
-
-
 }
