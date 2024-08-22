@@ -109,7 +109,7 @@ function initializeAnimation() {
 
     const animation = gsap.to(container, {
         x: -totalWidth,
-        duration: 15,
+        duration: 25,
         repeat: -1,
         ease: "linear",
         modifiers: {
@@ -165,7 +165,6 @@ function initializeAnimation() {
 initializeAnimation();
 
 
-
 //COUNT 
 
 const quantitySelectBook = document.getElementById("quantity_book");
@@ -176,11 +175,13 @@ const totalBookList = document.querySelector(".panierTotal__list--book");
 const totalEbookList = document.querySelector(".panierTotal__list--ebook");
 const totalBook = document.querySelector(".panierTotal__list--book #value__book_total");
 const totalEbook = document.querySelector(".panierTotal__list--ebook #value__ebook_total");
+const quantityBookTotal = document.getElementById("quantity__book_total");
+const quantityEbookTotal = document.getElementById("quantity__ebook_total");
 const valueTotal = document.getElementById("value__total");
 const noItemsMessage = document.getElementById("no-items-message");
-
-
 function updateTotals() {
+    if (!quantitySelectBook || !quantitySelectEbook) return;
+
     const pricePerBook = 169.99;
     const pricePerEbook = 9.99;
     const quantityBook = Number(quantitySelectBook.value);
@@ -191,23 +192,13 @@ function updateTotals() {
     if (totalBook) totalBook.textContent = `${subtotalBook}€`;
     if (panierEbook) panierEbook.textContent = `${subtotalEbook}€`;
     if (totalEbook) totalEbook.textContent = `${subtotalEbook}€`;
-    if (subtotalBook > 0) {
-        totalBookList.style.display = "flex";
-    } else {
-        totalBookList.style.display = "none";
-    }
-    if (subtotalEbook > 0) {
-        totalEbookList.style.display = "flex";
-    } else {
-        totalEbookList.style.display = "none";
-    }
+    if (quantityBookTotal) quantityBookTotal.textContent = `x${quantityBook}`;
+    if (quantityEbookTotal) quantityEbookTotal.textContent = `x${quantityEbook}`;
+    if (totalBookList) totalBookList.style.display = subtotalBook > 0 ? "flex" : "none";
+    if (totalEbookList) totalEbookList.style.display = subtotalEbook > 0 ? "flex" : "none";
     const total = (parseFloat(subtotalBook) + parseFloat(subtotalEbook)).toFixed(2);
     if (valueTotal) valueTotal.textContent = `${total}€`;
-    if (subtotalBook == 0 && subtotalEbook == 0) {
-        noItemsMessage.style.display = "block";
-    } else {
-        noItemsMessage.style.display = "none";
-    }
+    if (noItemsMessage) noItemsMessage.style.display = subtotalBook == 0 && subtotalEbook == 0 ? "block" : "none";
     const cartData = {
         subtotalBook: subtotalBook,
         subtotalEbook: subtotalEbook,
@@ -218,13 +209,31 @@ function updateTotals() {
 
     localStorage.setItem('cartData', JSON.stringify(cartData));
 }
-
 if (quantitySelectBook) {
     quantitySelectBook.addEventListener("input", updateTotals);
 }
 
 if (quantitySelectEbook) {
     quantitySelectEbook.addEventListener("input", updateTotals);
+}
+updateTotals();
+
+
+
+const cartData = JSON.parse(localStorage.getItem('cartData'));
+if (cartData) {
+    const quantityBookTotal = document.getElementById("quantity__book_total");
+    const quantityEbookTotal = document.getElementById("quantity__ebook_total");
+    const totalBook = document.querySelector(".panierTotal__list--book #value__book_total");
+    const totalEbook = document.querySelector(".panierTotal__list--ebook #value__ebook_total");
+    const valueTotal = document.getElementById("value__total");
+    const noItemsMessage = document.getElementById("no-items-message");
+    if (quantityBookTotal) quantityBookTotal.textContent = `x${cartData.quantityBook}`;
+    if (quantityEbookTotal) quantityEbookTotal.textContent = `x${cartData.quantityEbook}`;
+    if (totalBook) totalBook.textContent = `${cartData.subtotalBook}€`;
+    if (totalEbook) totalEbook.textContent = `${cartData.subtotalEbook}€`;
+    if (valueTotal) valueTotal.textContent = `${cartData.total}€`;
+    if (noItemsMessage) noItemsMessage.style.display = cartData.subtotalBook == 0 && cartData.subtotalEbook == 0 ? "block" : "none";
 }
 
 

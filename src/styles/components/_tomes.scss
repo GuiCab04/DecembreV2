@@ -71,11 +71,14 @@
 
 @media (min-width:1250px) {
     .tomes {
+        margin-top: 165px;
+
         &__title {
             font-size: 52px;
             margin: 0;
-            margin-bottom: 69px;
+            margin-bottom: 93px;
             padding-left: 69px;
+            margin-top: 0px;
         }
 
         &__img {

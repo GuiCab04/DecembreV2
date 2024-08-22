@@ -14,11 +14,6 @@
         margin-bottom: 47px;
     }
 
-    &__img {
-        width: 100%;
-        margin-top: 47px;
-    }
-
     &__subtitle {
         font-family: "Libre Caslon Display", serif;
         font-weight: 400;
@@ -68,13 +63,6 @@
         padding-left: 40px;
         padding-right: 40px;
 
-        &__img {
-            display: flex;
-            margin: 0 auto;
-            margin-top: 47px;
-            width: 70%;
-        }
-
         &__title {
             font-family: "Libre Caslon Display", serif;
             font-weight: 400;
@@ -102,7 +90,6 @@
             margin: 0;
             font-size: 22px;
             color: #fff;
-
         }
 
         &__text {
@@ -153,9 +140,8 @@
             font-size: 69px;
             color: #fff;
             margin: 0;
-            padding-top: 69px;
             margin-bottom: 93px;
-            padding-bottom: 0;
+            padding-top: 93px;
         }
 
         &__subtitle {
@@ -169,13 +155,6 @@
             margin-bottom: 69px;
         }
 
-        &__img {
-            display: flex;
-            margin: 0 auto;
-            margin-top: 47px;
-            width: 70%;
-        }
-
         &__h3 {
             font-family: "Manrope", sans-serif;
             margin: 0;
@@ -186,13 +165,10 @@
         &__text {
             font-family: "Manrope", sans-serif;
             margin: 0;
-            font-size: 22px;
-            font-weight: 800;
+            font-size: 29px;
             color: #fff;
-            margin-bottom: 17px;
+            margin-bottom: 22px;
             max-width: 70%;
-            display: flex;
-            margin: 0 auto;
         }
 
         &__list {

@@ -35,7 +35,6 @@
         padding: 0;
         margin: 0;
         list-style: none;
-
     }
 
     &__link {
@@ -52,7 +51,7 @@
     }
 }
 
-@media (min-width:750px) {
+@media (min-width: 750px) {
     .accueil {
         &__gif {
             margin-top: 91.1px;
@@ -105,32 +104,32 @@
             border: 1px solid rgba(0, 6, 22, 0.25);
             padding-left: 69px;
             padding-right: 69px;
+            text-align: center;
+            display: grid;
+            align-content: center;
         }
 
         &__h1 {
-            margin-top: 45%;
-            font-size: 84px;
+            font-size: 93px;
             margin-bottom: 12px;
-            margin-left: 69px;
+            margin-left: 0px;
         }
 
         &__p {
-            font-size: 22px;
+            font-size: 29px;
             margin-bottom: 69px;
-            margin-left: 69px;
+            margin-left: 0px;
         }
 
         &__link {
             display: block;
-            border: 1px solid rgb(255, 255, 255);
+            border: 1px solid #fff;
             border-radius: 5px;
-            color: white;
+            color: #fff;
             width: fit-content;
             padding-bottom: 12px;
             overflow: hidden;
-            margin: 0;
-            margin-bottom: 47px;
-            margin-left: 69px;
+            margin: 0 auto;
 
             &--anim {
                 padding: 15px 20px 19px 20px;
@@ -150,7 +149,7 @@
                 top: 0;
                 left: 0;
                 z-index: -1;
-                background: rgb(255, 255, 255);
+                background: #fff;
                 transition: all 0.3s ease;
             }
 
@@ -164,13 +163,13 @@
                 padding: 10px 25px;
                 position: relative;
                 z-index: 2;
-                color: white;
+                color: #fff;
                 text-decoration: none;
                 transition: color 0.3s ease;
             }
 
             &:hover a {
-                color: black;
+                color: #000;
             }
         }
 

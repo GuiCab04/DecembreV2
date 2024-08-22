@@ -143,6 +143,7 @@
     .footer {
         padding-left: 69px;
         padding-right: 69px;
+        margin-top: 165px;
 
         &__title {
             font-family: "Libre Caslon Display", serif;
@@ -151,8 +152,8 @@
             font-size: 52px;
             color: #fff;
             margin: 0;
-            margin-top: 93px;
-            margin-bottom: 69px;
+            margin-top: 0px;
+            margin-bottom: 93px;
         }
 
         &__link:hover {

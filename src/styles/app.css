@@ -564,6 +564,7 @@ main {
   .footer {
     padding-left: 69px;
     padding-right: 69px;
+    margin-top: 165px;
   }
   .footer__title {
     font-family: "Libre Caslon Display", serif;
@@ -572,8 +573,8 @@ main {
     font-size: 52px;
     color: #fff;
     margin: 0;
-    margin-top: 93px;
-    margin-bottom: 69px;
+    margin-top: 0px;
+    margin-bottom: 93px;
   }
   .footer__link:hover {
     text-decoration: underline;
@@ -683,11 +684,15 @@ main {
   }
 }
 @media (min-width: 1250px) {
+  .tomes {
+    margin-top: 165px;
+  }
   .tomes__title {
     font-size: 52px;
     margin: 0;
-    margin-bottom: 69px;
+    margin-bottom: 93px;
     padding-left: 69px;
+    margin-top: 0px;
   }
   .tomes__img img {
     height: 300px;
@@ -756,17 +761,17 @@ main {
     padding-left: 69px;
     padding-right: 69px;
     display: flex;
-    margin-top: 93px;
-    margin-bottom: 93px;
+    margin-top: 165px;
+    margin-bottom: 0px;
   }
   .description__text--title {
     font-size: 52px;
     margin: 0;
-    margin-bottom: 69px;
+    margin-bottom: 93px;
   }
   .description__text--p {
     font-size: 22px;
-    max-width: 40vw;
+    max-width: 80%;
     margin: 0;
   }
   .description__video {
@@ -868,30 +873,30 @@ main {
     border: 1px solid rgba(0, 6, 22, 0.25);
     padding-left: 69px;
     padding-right: 69px;
+    text-align: center;
+    display: grid;
+    align-content: center;
   }
   .accueil__h1 {
-    margin-top: 45%;
-    font-size: 84px;
+    font-size: 93px;
     margin-bottom: 12px;
-    margin-left: 69px;
+    margin-left: 0px;
   }
   .accueil__p {
-    font-size: 22px;
+    font-size: 29px;
     margin-bottom: 69px;
-    margin-left: 69px;
+    margin-left: 0px;
   }
   .accueil__link {
     display: block;
-    border: 1px solid rgb(255, 255, 255);
+    border: 1px solid #fff;
     border-radius: 5px;
-    color: white;
+    color: #fff;
     width: -moz-fit-content;
     width: fit-content;
     padding-bottom: 12px;
     overflow: hidden;
-    margin: 0;
-    margin-bottom: 47px;
-    margin-left: 69px;
+    margin: 0 auto;
   }
   .accueil__link--anim {
     padding: 15px 20px 19px 20px;
@@ -910,7 +915,7 @@ main {
     top: 0;
     left: 0;
     z-index: -1;
-    background: rgb(255, 255, 255);
+    background: #fff;
     transition: all 0.3s ease;
   }
   .accueil__link:hover:after {
@@ -922,12 +927,12 @@ main {
     padding: 10px 25px;
     position: relative;
     z-index: 2;
-    color: white;
+    color: #fff;
     text-decoration: none;
     transition: color 0.3s ease;
   }
   .accueil__link:hover a {
-    color: black;
+    color: #000;
   }
   .accueil a {
     color: #fff;
@@ -1002,12 +1007,13 @@ main {
   .coffret {
     padding-left: 69px;
     padding-right: 69px;
+    margin-top: 123px;
   }
   .coffret__title {
     font-size: 52px;
     margin: 0;
-    margin-bottom: 69px;
-    margin-top: 93px;
+    margin-bottom: 93px;
+    margin-top: 0px;
   }
   .coffret__content {
     display: flex;
@@ -1154,10 +1160,14 @@ main {
     padding-right: 69px;
   }
   .panier__title {
-    font-size: 52px;
+    font-family: "Libre Caslon Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 69px;
+    color: #fff;
     margin: 0;
-    margin-bottom: 69px;
-    margin-top: 93px;
+    margin-bottom: 93px;
+    padding-top: 93px;
   }
   .panier__img {
     width: 15vw;
@@ -1217,7 +1227,7 @@ main {
   color: #fff;
   margin: 0;
   margin-top: 63px;
-  margin-bottom: 47px;
+  margin-bottom: 63px;
 }
 .panierTotal__list {
   padding: 0;
@@ -1242,11 +1252,6 @@ main {
 .panierTotal__el--big {
   font-size: 27px;
   margin-top: 27px;
-}
-.panierTotal__img {
-  margin-top: 63px;
-  width: 100%;
-  padding: 0;
 }
 .panierTotal__listButton {
   display: flex;
@@ -1323,13 +1328,6 @@ main {
   .panierTotal__el--big {
     font-size: 27px;
     margin-top: 36px;
-  }
-  .panierTotal__img {
-    width: 80%;
-    padding: 0;
-    display: flex;
-    margin: 0 auto;
-    margin-top: 84px;
   }
   .panierTotal__listButton {
     display: flex;
@@ -1408,13 +1406,6 @@ main {
   .panierTotal__el--big {
     font-size: 39px;
     margin-top: 39px;
-  }
-  .panierTotal__img {
-    width: 50%;
-    padding: 0;
-    display: flex;
-    margin: 0 auto;
-    margin-top: 93px;
   }
   .panierTotal__listButton {
     display: flex;
@@ -1615,8 +1606,8 @@ main {
     font-size: 69px;
     color: #fff;
     margin: 0;
-    margin-bottom: 69px;
-    padding-top: 69px;
+    margin-bottom: 93px;
+    padding-top: 93px;
   }
   .livraison__form {
     width: 100vw;
@@ -2307,11 +2298,11 @@ main {
     font-family: "Libre Caslon Display", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 63px;
+    font-size: 69px;
     color: #fff;
     margin: 0;
-    padding-top: 63px;
-    margin-bottom: 63px;
+    margin-bottom: 93px;
+    padding-top: 93px;
   }
   .payement__form--margin {
     margin-bottom: 84px;
@@ -2534,10 +2525,6 @@ main {
   padding-top: 47px;
   margin-bottom: 47px;
 }
-.remerciement__img {
-  width: 100%;
-  margin-top: 47px;
-}
 .remerciement__subtitle {
   font-family: "Libre Caslon Display", serif;
   font-weight: 400;
@@ -2580,12 +2567,6 @@ main {
     margin-top: 91.1px;
     padding-left: 40px;
     padding-right: 40px;
-  }
-  .remerciement__img {
-    display: flex;
-    margin: 0 auto;
-    margin-top: 47px;
-    width: 70%;
   }
   .remerciement__title {
     font-family: "Libre Caslon Display", serif;
@@ -2656,9 +2637,8 @@ main {
     font-size: 69px;
     color: #fff;
     margin: 0;
-    padding-top: 69px;
     margin-bottom: 93px;
-    padding-bottom: 0;
+    padding-top: 93px;
   }
   .remerciement__subtitle {
     font-family: "Libre Caslon Display", serif;
@@ -2670,12 +2650,6 @@ main {
     margin-top: 69px;
     margin-bottom: 69px;
   }
-  .remerciement__img {
-    display: flex;
-    margin: 0 auto;
-    margin-top: 47px;
-    width: 70%;
-  }
   .remerciement__h3 {
     font-family: "Manrope", sans-serif;
     margin: 0;
@@ -2685,13 +2659,10 @@ main {
   .remerciement__text {
     font-family: "Manrope", sans-serif;
     margin: 0;
-    font-size: 22px;
-    font-weight: 800;
+    font-size: 29px;
     color: #fff;
-    margin-bottom: 17px;
+    margin-bottom: 22px;
     max-width: 70%;
-    display: flex;
-    margin: 0 auto;
   }
   .remerciement__list {
     padding: 0;
@@ -2857,8 +2828,8 @@ body:not(.loading) .loader__container {
     font-size: 69px;
     color: #fff;
     margin: 0;
-    margin-top: 0px;
-    margin-bottom: 69px;
+    margin-bottom: 93px;
+    padding-top: 93px;
   }
   .credits__subtitle {
     font-family: "Libre Caslon Display", serif;
