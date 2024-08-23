@@ -49,8 +49,9 @@
             <form class="payement__form" action="remerciement.html" method="get">
                 <div class="payement__form--margin">
                     <div class="payement__method">
-                        <label class="payement__radioLabel">
-                            <input type="radio" name="paymentMethod" value="credit" required>Carte de crédit
+                        <label for="paymentMethodCredit" class="payement__radioLabel">
+                            <input type="radio" name="paymentMethod" id="paymentMethodCredit" value="credit" required>
+                            Carte&nbsp;de&nbsp;crédit
                             <img class="payement__radioImg" src="assets/images/mastercard.png"
                                 srcset="assets/images/mastercard@2x.png 2x" alt="Logo de mastercard">
                             <img class="payement__radioImg" src="assets/images/visa.png"
@@ -59,7 +60,7 @@
 
                         <fieldset class="payement__creditParent">
                             <div class="payement__creditEl--1">
-                                <label class="payement__gridLabel" for="creditCarte">Numéro de carte</label>
+                                <label class="payement__gridLabel" for="creditCarte">Numéro&nbsp;de&nbsp;carte</label>
                                 <input class="payement__gridInput" type="text" id="creditCarte" name="creditCarte"
                                     title="Entrez votre numéro de carte" placeholder="BE01 2345 6789 0123">
                             </div>
@@ -83,9 +84,9 @@
                         </fieldset>
                     </div>
                     <div class="payement__method">
-                        <label class="payement__radioLabel">
-                            <input type="radio" name="paymentMethod" value="debit" required>
-                            Carte de débit
+                        <label for="paymentMethodDebit" class="payement__radioLabel">
+                            <input type="radio" name="paymentMethod" id="paymentMethodDebit" value="debit" required>
+                            Carte de débit
                             <img class="payement__radioImg" src="assets/images/bancontact.png"
                                 srcset="assets/images/bancontact@2x.png 2x" alt="Logo de bancontact">
                             <img class="payement__radioImg" src="assets/images/maestro.png"
@@ -94,7 +95,7 @@
 
                         <fieldset class="payement__debitParent">
                             <div class="payement__debitEl--1">
-                                <label class="payement__gridLabel" for="debitCarte">Numéro de carte</label>
+                                <label class="payement__gridLabel" for="debitCarte">Numéro&nbsp;de&nbsp;carte</label>
                                 <input class="payement__gridInput" type="text" id="debitCarte" name="debitCarte"
                                     title="Entrez votre numéro de carte" placeholder="BE01 2345 6789 0123">
                             </div>
@@ -112,8 +113,8 @@
                         </fieldset>
                     </div>
                     <div class="payement__method">
-                        <label class="payement__radioLabel">
-                            <input type="radio" name="paymentMethod" value="paypal" required>
+                        <label for="paymentMethodPaypal" class="payement__radioLabel">
+                            <input type="radio" name="paymentMethod" id="paymentMethodPaypal" value="paypal" required>
                             Paypal
                             <img class="payement__radioImg" src="assets/images/paypal.png"
                                 srcset="assets/images/paypal@2x.png 2x" alt="Logo de paypal">
@@ -124,45 +125,51 @@
                     <div class="recap__content">
                         <h2 class="recap__subtitle">Produit</h2>
 
-                        <p class="recap__paraNoItem" id="no-items-message">Aucun article n’est sélectionné.</p>
+                        <p class="recap__paraNoItem" id="no-items-message">Aucun&nbsp;article n’est&nbsp;sélectionné.
+                        </p>
 
                         <ul class="recap__list recap__list--book">
-                            <li class="recap__el">Solo Leveling - KBooks<span class="br">
-                                    Coffret complet (14 livres)</span><span id="quantity__book_total">x0</span></li>
+                            <li class="recap__el">Solo&nbsp;Leveling&nbsp;-&nbsp;KBooks<span class="br">
+                                    Coffret&nbsp;complet&nbsp;(14&nbsp;livres)</span><span
+                                    id="quantity__book_total">x0</span></li>
                             <li class="recap__el" id="recapValue__book">0.00€</li>
                         </ul>
                         <ul class="recap__list recap__list--ebook">
-                            <li class="recap__el">Solo Leveling - KBooks<span class="br">
-                                    Kindle (14 fichiers livres)</span><span id="quantity__ebook_total">x0</span></li>
+                            <li class="recap__el">Solo&nbsp;Leveling&nbsp;-&nbsp;KBooks<span class="br">
+                                    Kindle&nbsp;(14&nbsp;fichiers&nbsp;livres)</span><span
+                                    id="quantity__ebook_total">x0</span></li>
                             <li class="recap__el" id="recapValue__ebook">0.00€</li>
                         </ul>
 
                         <ul class="recap__list">
-                            <li class="recap__el recap__el--big">Total&#8239;:</li>
+                            <li class="recap__el recap__el--big">Total :</li>
                             <li class="recap__el recap__el--big" id="recapValue__total">0.00€</li>
                         </ul>
                     </div>
                     <ul class="recap__conditionsList">
                         <li class="recap__conditionsEl">
-                            <input class="recap__conditionsInput" type="checkbox" id="conditionsVente" required>
-                            <label class="recap__conditionsLabel" for="conditionsVente">Accepter les <span
-                                    class="recap__conditionsLabel--underline">conditions générales
+                            <input class="recap__conditionsInput" name="conditionsVente" type="checkbox"
+                                id="conditionsVente" required>
+                            <label class="recap__conditionsLabel" for="conditionsVente">Accepter&nbsp;les <span
+                                    class="recap__conditionsLabel--underline">conditions&nbsp;générales
                                     de vente.</span></label>
                         </li>
                         <li class="recap__conditionsEl">
-                            <input class="recap__conditionsInput" type="checkbox" id="conditionsGenerales" required>
-                            <label class="recap__conditionsLabel" for="conditionsGenerales">Accepter les
-                                <span class="recap__conditionsLabel--underline">conditions générales</span>
-                                de Solo Leveling.</label>
+                            <input class="recap__conditionsInput" name="conditionsGenerales" type="checkbox"
+                                id="conditionsGenerales" required>
+                            <label class="recap__conditionsLabel" for="conditionsGenerales">Accepter&nbsp;les
+                                <span class="recap__conditionsLabel--underline">conditions&nbsp;générales</span>
+                                de Solo Leveling.</label>
                         </li>
                     </ul>
 
                     <div class="button__linkSubmit--center">
-                        <button class="button__linkSubmit" type="submit">Confirmer le payement</button>
+                        <button class="button__linkSubmit" type="submit">Confirmer&nbsp;le payement</button>
                     </div>
                 </div>
             </form>
         </section>
+
     </main>
 
     <footer class="footer">
@@ -192,7 +199,7 @@
                         href="https://guillaume-cabaraux.be">Guillaume Cabaraux</a></li>
             </ul>
         </div>
-        <small class="footer__small">©2024 - <a class="link-transition footer__credit"
+        <small class="footer__small">©2024&nbsp;-&nbsp;<a class="link-transition footer__link"
                 href="credit.html">Crédits</a></small>
     </footer>
 
