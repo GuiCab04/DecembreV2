@@ -119,12 +119,10 @@ function initializeAnimation() {
     });
 
     function pauseAnimation() {
-        console.log('Pausing animation');
         animation.pause();
     }
 
     function resumeAnimation() {
-        console.log('Resuming animation');
         animation.play();
     }
 
@@ -297,8 +295,6 @@ function saveFormData() {
         villeCadeau: document.getElementById('villeCadeau').value,
         paysCadeau: document.getElementById('paysCadeau').value
     };
-
-    console.log('Données du formulaire sauvegardées:', formData);
     localStorage.setItem('formData', JSON.stringify(formData));
 }
 
